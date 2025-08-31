@@ -4,6 +4,7 @@ Este proyecto contiene la investigación "Simulación Cuántica de Estados Post-
 
 ## Estructura del Proyecto
 
+```
 BardoThodol/
 ├── spanish-english/          # Versión español-inglés
 │   ├── main.tex             # Documento principal LaTeX
@@ -11,17 +12,22 @@ BardoThodol/
 │   ├── compile.bat          # Script de compilación (Windows)
 │   ├── compile.sh           # Script de compilación (Linux/macOS)
 │   └── figures/             # Figuras y diagramas
+│       ├── state_probability.jpg
+│       └── phase_diagram.jpg
 ├── chinese-tibetan/         # Versión chino-tibetano
 │   ├── main.tex             # Documento principal LaTeX
 │   ├── references.bib       # Base de datos bibliográfica
 │   ├── compile.bat          # Script de compilación (Windows)
 │   ├── compile.sh           # Script de compilación (Linux/macOS)
 │   └── figures/             # Figuras y diagramas
+│       ├── state_probability.jpg
+│       └── phase_diagram.jpg
 ├── resources/               # Recursos adicionales
 │   ├── translation_guide.md # Guía de traducción
 │   └── font_installation.md # Instrucciones de fuentes
 ├── README.md               # Este archivo
 └── LICENSE                 # Licencia MIT
+```
 
 ## Requisitos de Compilación
 
