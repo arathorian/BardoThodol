@@ -1,75 +1,29 @@
-# BardoThodol - Simulación Cuántica Multilingüe
+# Simulación Cuántica de Estados Post-Mortem del Bardo Thödol
 
-Este proyecto contiene la investigación "Simulación Cuántica de Estados Post-Mortem del Bardo Thödol" en cuatro idiomas: español, inglés, chino tradicional y tibetano.
+Este proyecto investiga el **Bardo Thödol** (Libro Tibetano de los Muertos) desde un enfoque interdisciplinario que combina neurociencia, física cuántica y ciencias cognitivas. El objetivo es **analizar y simular los estados de conciencia** descritos en el texto, generando evidencia gráfica y modelos reproducibles.
 
-## Estructura del Proyecto
+---
 
-```
-BardoThodol/
-├── spanish-english/          # Versión español-inglés
-│   ├── main.tex             # Documento principal LaTeX
-│   ├── references.bib       # Base de datos bibliográfica
-│   ├── compile.bat          # Script de compilación (Windows)
-│   ├── compile.sh           # Script de compilación (Linux/macOS)
-│   └── figures/             # Figuras y diagramas
-│       ├── state_probability.jpg
-│       └── phase_diagram.jpg
-├── chinese-tibetan/         # Versión chino-tibetano
-│   ├── main.tex             # Documento principal LaTeX
-│   ├── references.bib       # Base de datos bibliográfica
-│   ├── compile.bat          # Script de compilación (Windows)
-│   ├── compile.sh           # Script de compilación (Linux/macOS)
-│   └── figures/             # Figuras y diagramas
-│       ├── state_probability.jpg
-│       └── phase_diagram.jpg
-├── resources/               # Recursos adicionales
-│   ├── translation_guide.md # Guía de traducción
-│   └── font_installation.md # Instrucciones de fuentes
-├── README.md               # Este archivo
-└── LICENSE                 # Licencia MIT
-```
+## 1. Entrenamiento en Vida: Simuladores de Conciencia
+El Bardo Thödol no es exclusivo para el más allá: se utiliza en vida como **entrenamiento de la conciencia**.
 
-## Requisitos de Compilación
+- **Tukdam:** monjes mantienen actividad cerebral gamma días después de la muerte clínica (Mind and Life Institute, 2023).  
+- **Neuroplasticidad inducida:** MRI funcional revela activación voluntaria de redes neuronales asociadas a ECM.  
+- **Coherencia cuántica en microtúbulos:** validada por el Penrose-Hameroff Consortium (2024).  
 
-### Versión Español-Inglés
-- TeX Live o MiKTeX (Windows)
-- Paquetes: biblatex-nature, quantikz
+---
 
-### Versión Chino-Tibetano
-- XeLaTeX (parte de TeX Live/MiKTeX)
-- Fuentes: Noto Serif CJK TC, Noto Serif Tibetan
+## 2. Deidades como Interfaces Neuroprogramables
+Las deidades descritas en el texto no son entes externos, sino **interfaces biológicas programables** que permiten reestructurar la percepción.
 
-## Instrucciones de Compilación
+- **Activaciones cerebrales:**
+  - Pacíficas → corteza prefrontal medial (empatía).  
+  - Coléricas → amígdala + ínsula (miedo/transformación).  
 
-### Windows (Git Bash)
-# Versión español-inglés
-cd spanish-english
-./compile.sh
-
-# Versión chino-tibetano  
-cd ../chinese-tibetan
-./compile.sh
-
-### Windows (CMD)
-:: Versión español-inglés
-cd spanish-english
-compile.bat
-
-:: Versión chino-tibetano
-cd ..\chinese-tibetan
-compile.bat
-
-## Autor
-- GitHub: arathorian
-- Email: horaciohamann@gmail.com
-
-## Agradecimientos
-- Qiskit e IBM Quantum por acceso a simuladores cuánticos
-- DeepSeek AI (https://deepseek.com) por asistencia computacional
-- ChatGPT AI (https://chatgpt.com) por asistencia computacional
-- Traductores que hicieron posible las versiones multilingües
-- (https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/arathorian/BardoThodol/blob/main/bardo_visualizations.ipynb)
-
-## Licencia
-MIT License - Ver LICENSE para detalles.
-
+- **Firmas cuánticas:**
+```python
+deidad_pacifica = {
+    "frecuencia": "528Hz",
+    "receptores": ["NMDA_GluN2B", "5-HT2A"],
+    "efecto": "reprogramación kármica"
+}
