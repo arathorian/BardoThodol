@@ -66,7 +66,9 @@ compile.bat
 ## Agradecimientos
 - Qiskit e IBM Quantum por acceso a simuladores cuánticos
 - DeepSeek AI (https://deepseek.com) por asistencia computacional
+- ChatGPT AI (https://chatgpt.com) por asistencia computacional
 - Traductores que hicieron posible las versiones multilingües
+- (https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/arathorian/BardoThodol/blob/main/bardo_visualizations.ipynb)
 
 ## Licencia
 MIT License - Ver LICENSE para detalles.
