@@ -1,0 +1,7 @@
+@software{Hamann2025BardoQThodol,
+  author = {Horacio Hamann},
+  title = {Simulación Cuántica de Estados Post-Mortem del Bardo Thödol},
+  version = {0.1.0},
+  date = {2025-09-15},
+  url = {https://github.com/arathorian/BardoThodol}
+}
