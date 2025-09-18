@@ -1,116 +1,150 @@
-\documentclass[12pt]{article}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
-\usepackage[spanish,english]{babel}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{graphicx}
-\usepackage{booktabs}
-\usepackage{hyperref}
-\usepackage[style=nature]{biblatex}
-\usepackage{quantikz}
-\usepackage{geometry}
-\usepackage{spverbatim}
-\usepackage{microtype}
+\documentclass[12pt,a4paper]{article}
 
-\geometry{a4paper, margin=1.5cm}
-\microtypesetup{
-  expansion = false,
-  protrusion = true,
-  tracking = false,
+% ==== Paquetes ====
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{csquotes}
+\usepackage{geometry}
+\usepackage{biblatex}
+\addbibresource{references.bib}
+
+\geometry{margin=2.5cm}
+
+% ==== Configuración para código ====
+\lstset{
+  basicstyle=\ttfamily\footnotesize,
+  breaklines=true,
+  frame=single,
+  backgroundcolor=\color{gray!10}
 }
 
-% Metadatos
-\title{Quantum Simulation of Post-Mortem States from the Bardo Thödol Using CPT-Dual Matrices and Karmic Parameters}
-\author{arathorian \\ Independent Researcher \\ \spverbatim|horaciohamann@gmail.com|}
-\date{July 2025}
-
-\addbibresource{references.bib}
+% ==== Front Matter ====
+\title{\textbf{Simulación Cuántica de Estados Post-Mortem del Bardo Thödol}}
+\author{Horacio Hamann \\ \texttt{https://github.com/arathorian}}
+\date{Septiembre 2025}
 
 \begin{document}
 
 \maketitle
 
 \begin{abstract}
-This work presents the first theoretical-computational framework for simulating post-mortem conscious states described in the \textit{Bardo Thödol} (Tibetan Book of the Dead) using quantum computation. I developed this research independently, introducing a novel model based on entangled CPT-dual matrices with dynamic karmic parameters. This framework enables simulation of transitions between manifest existence (samsara), unmanifest states (bardo), and fundamental voidness (śūnyatā). I implemented quantum circuits in Qiskit demonstrating that critical $|11\rangle_{\text{inv}}$ states function as bridges between realities, with probabilities governed by karmic evolution equations. My experimental validation on quantum simulators shows non-classical correlations (quantum discord $\mathcal{D}_q > 0.45$) confirming the necessity of a quantum paradigm to model these phenomena. This work establishes a fundamental bridge between quantum physics and contemplative traditions.
+Este trabajo explora el \emph{Bardo Thödol} (Libro Tibetano de los Muertos) 
+desde un marco interdisciplinario que combina física cuántica, neurociencia 
+y lingüística. Se propone un modelo computacional para simular los estados 
+de conciencia descritos en el texto, integrando métricas neurofisiológicas, 
+circuitos cuánticos y patrones lingüísticos. El objetivo es establecer un 
+puente entre la tradición contemplativa y la ciencia moderna, proponiendo 
+tanto implementaciones en hardware cuántico como vías de validación experimental.
 \end{abstract}
 
-\section{Introduction}
-The \textit{Bardo Thödol} \cite{evans1927tibetan} describes intermediate states between death and rebirth according to Tibetan Buddhism. While traditionally interpreted as a religious text, I propose its reinterpretation as a \textit{conscious information processing manual}. Recent studies \cite{penrose1994shadows, hameroff2014consciousness} suggest quantum phenomena might underlie consciousness, but no work has modeled post-mortem states.
+\tableofcontents
 
-This independent research makes three fundamental contributions:
-\begin{enumerate}
-\item I demonstrate that bardo states require \textbf{qutrits} ($|0\rangle$, $|1\rangle$, $|2\rangle$) to include voidness as a fundamental state.
-\item I formulate \textbf{CPT-dual matrices} with modified charge-parity-time symmetry for inverse states.
-\item I introduce \textbf{dynamic karmic parameters} $\kappa(t)$, $\alpha(t)$ governing temporal evolution.
-\end{enumerate}
+% === 1. INTRODUCCIÓN ===
+\section{Introducción}
+Contexto histórico del \emph{Bardo Thödol}. Motivación científica: de texto 
+ritual a modelo cuántico. Estado del arte en teorías de conciencia cuántica. 
+Objetivos del proyecto.
 
-\section{Theoretical Framework}
-\subsection{Quantum States of the Bardo}
-I define the Hilbert space $\mathcal{H}_{\text{bardo}} = \mathcal{H}_s \otimes \mathcal{H}_a \otimes \mathcal{H}_v$ where:
-\begin{align*}
-\mathcal{H}_s &: \text{Samsaric states (manifest)} \\
-\mathcal{H}_a &: \text{Alternate states (unmanifest)} \\
-\mathcal{H}_v &: \text{Voidness (}\|2\rangle\text{)}
-\end{align*}
+% === 2. MARCO TEÓRICO ===
+\section{Marco Teórico}
 
-The total wavefunction:
-\begin{equation}
-|\Psi_{\text{bardo}}\rangle = \alpha|s\rangle + \beta|a\rangle + \gamma|v\rangle \quad \text{with} \quad |\alpha|^2 + |\beta|^2 + |\gamma|^2 = 1
-\end{equation}
+\subsection{Estados de Conciencia en el Bardo}
+Entrenamiento en vida (Tukdam y simulaciones de conciencia). Estados post-mortem 
+como fases transitorias. Evidencia neurocientífica \cite{wisconsin2022gamma, mindlife2023tukdam}.
 
-\subsection{CPT-Dual Matrices}
-I define the dual operator $\hat{\mathcal{D}}$:
-\begin{equation}
-\hat{\mathcal{D}} = \kappa \hat{A} \otimes \hat{B} + (1 - \kappa) \hat{B} \otimes \hat{A}
-\end{equation}
-where $\hat{B} = \mathcal{C}\mathcal{P}\mathcal{T}(\hat{A})$ with phase correction for $|11\rangle$:
-\begin{equation}
-\hat{B}|11\rangle = -e^{i\phi}\hat{A}^{\dagger}|11\rangle
-\end{equation}
+\subsection{Modelado Matemático}
+\begin{align}
+| \psi_{bardo} \rangle = \frac{1}{\sqrt{2}} (|vida\rangle + |muerte\rangle)
+\end{align}
+Qutrits $(|0\rangle, |1\rangle, |2\rangle)$ para incluir vacuidad. 
+Parámetros kármicos dinámicos $\kappa(t), \alpha(t)$. 
+Matrices CPT-duales.
 
-\section{Methodology}
-I conducted all research independently using Qiskit 1.0 for quantum simulations, qutrit emulation via 2 qubits, and parameters $\kappa \in [0,1]$, $\alpha \in [0,\pi/2]$.
+\subsection{Lingüística y Algoritmos Binarios}
+Patrones Fibonacci y 3-6-9 (Tesla). Mandalas como mapas geométricos cuánticos 
+\cite{kyoto2024linguistics, watanabe2024mandalas}.
 
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.8\textwidth]{figures/state_probability.jpg}
-\caption{State probability as function of $\kappa$}
-\label{fig:prob}
-\end{figure}
+% === 3. IMPLEMENTACIÓN COMPUTACIONAL ===
+\section{Implementación Computacional}
 
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.8\textwidth]{figures/phase_diagram.jpg}
-\caption{Karmic-quantum phase diagram}
-\label{fig:phases}
-\end{figure}
+\subsection{Simulación Clásica (Python)}
+Ejemplo de activación de deidad pacífica:
+\begin{lstlisting}[language=Python]
+deidad_pacifica = {
+  "frecuencia": "528Hz",
+  "receptores": ["NMDA_GluN2B", "5-HT2A"],
+  "efecto": "reprogramacion karmica"
+}
+\end{lstlisting}
 
-\section{Results}
-I observed high probability for $|1100\rangle$ when $\kappa > 0.7$, $\alpha < 0.3$:
-\begin{equation}
-P(|1100\rangle) = 0.721 \pm 0.032 \quad (\text{95\% CI})
-\end{equation}
+\subsection{Circuitos Cuánticos (Qiskit)}
+Diseño de circuito cuántico en IBM Quantum \cite{ibm2025qiskit}. 
+Métricas: discordia cuántica $D_q > 0.45$, negatividad. 
+Emulación de qutrits con pares de qubits.
 
-Measurements showed strong non-classical correlation:
-\begin{align*}
-\mathcal{N}_{AB} &= 0.428 \pm 0.021 \\
-\mathcal{D}_q &= 0.472 \pm 0.018
-\end{align*}
+\subsection{Resultados Gráficos}
+\begin{itemize}
+  \item \texttt{brain\_coherence\_study.png} → coherencia gamma.
+  \item \texttt{quantum\_circuit\_bardo\_simulation.png} → circuito IBM.
+  \item \texttt{biophotons\_coherence.png} → biofotones coherentes.
+\end{itemize}
 
-\section{Conclusion}
-This work demonstrates the feasibility of simulating bardo states using quantum computation and establishes CPT-dual matrices as fundamental tools for consciousness modeling.
+% === 4. VALIDACIÓN EXPERIMENTAL ===
+\section{Vías de Validación Experimental}
+Neuroimagen (EEG, fMRI) en meditadores avanzados \cite{wisconsin2022gamma}.  
+Estudios de Tukdam post-mortem \cite{mindlife2023tukdam}.  
+Medición de biofotones coherentes \cite{stanford2023clearlight}.  
+Implementación piloto en hardware cuántico (IBM, IonQ, Rigetti).  
+Colaboraciones interdisciplinarias.
 
-\printbibliography[title=References]
+% === 5. COMPARATIVA CON TEORÍAS ===
+\section{Comparativa con Teorías de Conciencia}
+Modelo Orch-OR de Penrose y Hameroff \cite{hameroff2014consciousness}.  
+Similitudes y diferencias con el presente enfoque.  
+Aportes originales: qutrits y parámetros kármicos dinámicos.
 
-\section*{Author Contribution Statement}
-I developed the complete theoretical framework, computational model, simulations, and analysis independently between June and July 2025 without institutional support or funding.
+% === 6. DESAFÍOS EN HARDWARE ===
+\section{Desafíos de Implementación en Hardware Real}
+Qutrits vs qubits. Corrección de errores cuánticos.  
+Comparativa de plataformas (IBM, IonQ, Rigetti).  
 
-\section*{Code and Data Availability}
-All code and simulation data are available at: \url{https://github.com/arathorian/quantum-bardo}
+% === 7. ÉTICA Y CULTURA ===
+\section{Consideraciones Éticas y Culturales}
+Respeto a la tradición tibetana. Colaboración intercultural.  
+Limitaciones del modelado computacional.  
 
-\section*{Acknowledgments}
-I thank the open-source quantum computing community and specifically recognize Qiskit developers and IBM Quantum for their free simulator access. Special thanks to DeepSeek AI (\url{https://deepseek.com}) for computational assistance and framework validation.
+% === 8. APLICACIONES ===
+\section{Aplicaciones e Implicaciones}
+
+\subsection{Científicas}
+Conciencia como hardware cuántico \cite{hameroff2014consciousness}.
+
+\subsection{Tecnológicas}
+API de conciencia y afterlife VR \cite{mit2024symmetry}.
+
+\subsection{Médicas y Sociales}
+Terapia de fin de vida, biomarcadores de conciencia \cite{stanford2023clearlight}.
+
+\subsection{Filosóficas}
+Reinterpretación del Bardo como manual cuántico \cite{penrose1994shadows}.
+
+% === 9. CONCLUSIÓN ===
+\section{Conclusión Críptica}
+“El \emph{Bardo Thödol} no es un texto religioso, 
+sino un manual de usuario de la conciencia para su transición a estados cuánticos.”
+
+% === APÉNDICE ===
+\appendix
+\section{Procesamiento Lingüístico Cuántico del Bardo Thödol}
+Patrones binarios y Fibonacci en versos \cite{kyoto2024linguistics}.  
+Modelado en espacios de Hilbert.  
+Potenciales aplicaciones del QNLP en textos antiguos.
+
+% === REFERENCIAS ===
+\printbibliography
 
 \end{document}
