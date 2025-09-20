@@ -1,0 +1,16 @@
+proyecto.aux
+# Almacena información auxiliar utilizada para la numeración de secciones, referencias cruzadas, etc.
+proyecto.bcf
+# Un archivo binario para el control de referencias cruzadas.
+proyecto.log
+# Contiene el registro detallado de la compilación, incluyendo errores y advertencias.
+proyecto.out
+# Archivo de salida utilizado por algunos paquetes para información específica.
+proyecto.pdf
+# Este es el documento final compilado. No es un archivo fuente y puede ser generado por cualquiera que  compile el archivo .tex.
+proyecto.run.xml
+# Archivo de configuración de compilación, a menudo generado por editores de LaTeX.
+proyecto.synctex.gz
+# Usado para la sincronización entre el editor y el visor de PDF.
+proyecto.toc
+# Almacena el índice de contenidos del documento.
