@@ -14,3 +14,4 @@ BardoQuantum.synctex.gz
 # Usado para la sincronización entre el editor y el visor de PDF.
 BardoQuantum.toc
 # Almacena el índice de contenidos del documento.
+ibm_config.json
