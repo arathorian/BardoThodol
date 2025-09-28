@@ -4,138 +4,125 @@ Simulación principal del Bardo Thödol.
 """
 import sys
 import os
+import json
 import matplotlib.pyplot as plt
 
-# Configuración robusta del path
+# Configuración del path
 current_dir = os.path.dirname(os.path.abspath(__file__))
 src_path = os.path.join(current_dir, 'src')
+sys.path.insert(0, src_path)
 
-# Añadir src al path de manera absoluta
-if src_path not in sys.path:
-    sys.path.insert(0, src_path)
-
-print(f"🔍 Configurando entorno...")
-print(f"📁 Directorio actual: {current_dir}")
-print(f"📁 Path src: {src_path}")
-print(f"📁 Existe src: {os.path.exists(src_path)}")
-
-if os.path.exists(src_path):
-    print("📁 Contenido de src:")
-    for item in os.listdir(src_path):
-        item_path = os.path.join(src_path, item)
-        if os.path.isdir(item_path):
-            print(f"  📂 {item}/")
-            for subitem in os.listdir(item_path):
-                if subitem.endswith('.py'):
-                    print(f"    📄 {subitem}")
-        elif item.endswith('.py'):
-            print(f"  📄 {item}")
-
-# Importaciones con verificación individual
 try:
     from core.quantum_state import QuantumStateManager
-    print("✅ QuantumStateManager importado correctamente")
-except ImportError as e:
-    print(f"❌ Error importando QuantumStateManager: {e}")
-    # Crear una versión mínima temporal
-    print("🔄 Creando versión mínima temporal...")
-    from qiskit import QuantumCircuit
-    import numpy as np
-
-    class QuantumStateManager:
-        def __init__(self, state_data=None):
-            self.states = ["chonyid_bardo", "sidpa_bardo", "clear_light", "intermediate"]
-            self.probabilities = np.array([0.3, 0.4, 0.2, 0.1])
-
-        def create_bardo_circuit(self, num_qubits=2):
-            qc = QuantumCircuit(num_qubits)
-            for i in range(num_qubits):
-                qc.h(i)
-            return qc
-
-try:
     from core.simulator import BardoSimulator
-    print("✅ BardoSimulator importado correctamente")
-except ImportError as e:
-    print(f"❌ Error importando BardoSimulator: {e}")
-    print("🔄 Creando versión mínima temporal...")
-    from qiskit import QuantumCircuit, transpile
-    from qiskit_aer import Aer
-
-    class BardoSimulator:
-        def __init__(self, backend='aer_simulator'):
-            self.backend = Aer.get_backend(backend)
-
-        def simulate(self, circuit, shots=1024):
-            compiled = transpile(circuit, self.backend)
-            job = self.backend.run(compiled, shots=shots)
-            return job.result().get_counts()
-
-try:
     from visualization.plotter import BardoVisualizer
-    print("✅ BardoVisualizer importado correctamente")
+    print("✅ Todos los módulos importados correctamente")
 except ImportError as e:
-    print(f"❌ Error importando BardoVisualizer: {e}")
-    print("🔄 Creando versión mínima temporal...")
+    print(f"❌ Error de importación: {e}")
+    sys.exit(1)
 
-    class BardoVisualizer:
-        def plot_quantum_results(self, counts, title="Resultados"):
-            from qiskit.visualization import plot_histogram
-            return plot_histogram(counts, title=title)
+def guardar_resultados(results, estados, probabilidades, filename="resultados_simulacion.json"):
+    """Guarda los resultados de la simulación en un archivo JSON."""
+    datos = {
+        "metadata": {
+            "timestamp": __import__('datetime').datetime.now().isoformat(),
+            "total_ejecuciones": sum(results.values()),
+            "estados_posibles": len(results)
+        },
+        "resultados_cuanticos": results,
+        "estados_bardo": estados,
+        "probabilidades": probabilidades.tolist() if hasattr(probabilidades, 'tolist') else probabilidades
+    }
 
-        def plot_bardo_states(self, states, probabilities):
-            fig, ax = plt.subplots(figsize=(10, 6))
-            bars = ax.bar(states, probabilities)
-            return fig
+    with open(filename, 'w', encoding='utf-8') as f:
+        json.dump(datos, f, indent=2, ensure_ascii=False)
+
+    print(f"💾 Resultados guardados en: {filename}")
+    return filename
 
 def main():
-    """Función principal de la simulación."""
-    print("\n🌌 INICIANDO SIMULACIÓN DEL BARDO THÖDOL")
+    """Simulación completa del Bardo Thödol con visualizaciones avanzadas."""
+
+    print("🌌 SIMULACIÓN AVANZADA DEL BARDO THÖDOL")
     print("=" * 50)
 
+    # Inicializar componentes
+    state_manager = QuantumStateManager()
+    simulator = BardoSimulator()
+    visualizer = BardoVisualizer()
+
+    # Crear y ejecutar circuito
+    print("🎛️  Creando circuito cuántico...")
+    circuit = state_manager.create_bardo_circuit()
+    circuit.measure_all()
+
+    print("⚡ Ejecutando simulación (1024 shots)...")
+    results = simulator.simulate(circuit)
+
+    # Mostrar resultados
+    total = sum(results.values())
+    print(f"\n📊 RESULTADOS (Total: {total} ejecuciones)")
+    print("-" * 40)
+
+    for state, count in sorted(results.items()):
+        percentage = (count / total) * 100
+        print(f"🔮 Estado {state}: {count:4d} veces ({percentage:5.1f}%)")
+
+    # Guardar resultados
+    archivo_resultados = guardar_resultados(
+        results,
+        state_manager.states,
+        state_manager.probabilities
+    )
+
+    # Generar visualizaciones avanzadas
+    print("\n🎨 Generando visualizaciones...")
+
     try:
-        # Inicializar componentes
-        state_manager = QuantumStateManager()
-        simulator = BardoSimulator()
-        visualizer = BardoVisualizer()
+        # Dashboard completo
+        dashboard = visualizer.create_dashboard(
+            results,
+            state_manager.states,
+            state_manager.probabilities.tolist(),
+            circuit,
+            "Dashboard del Bardo Thödol - Simulación Completa"
+        )
 
-        # Crear circuito
-        print("🎛️  Creando circuito cuántico...")
-        circuit = state_manager.create_bardo_circuit()
-        circuit.measure_all()
+        # Guardar visualizaciones
+        visualizer.save_all_visualizations(
+            results,
+            state_manager.states,
+            state_manager.probabilities.tolist(),
+            circuit
+        )
 
-        # Simular
-        print("⚡ Ejecutando simulación (1024 shots)...")
-        results = simulator.simulate(circuit)
-
-        # Mostrar resultados
-        total = sum(results.values())
-        print(f"\n📊 RESULTADOS (Total: {total} ejecuciones)")
-        print("-" * 40)
-
-        for state, count in sorted(results.items()):
-            percentage = (count / total) * 100
-            print(f"🔮 Estado {state}: {count:4d} veces ({percentage:5.1f}%)")
-
-        # Visualización
-        print("\n🎨 Generando visualizaciones...")
-        try:
-            fig1 = visualizer.plot_quantum_results(results, "Simulación Bardo Thödol")
-            fig2 = visualizer.plot_bardo_states(state_manager.states, state_manager.probabilities)
-            plt.show()
-        except Exception as e:
-            print(f"⚠️  Visualización no disponible: {e}")
-
-        return results
+        # Mostrar gráficos
+        plt.show()
 
     except Exception as e:
-        print(f"💥 Error durante la simulación: {e}")
-        return None
+        print(f"⚠️  Error en visualizaciones: {e}")
+
+    # Análisis avanzado de resultados
+    try:
+        from analysis.analyzer import BardoAnalyzer
+        analyzer = BardoAnalyzer(archivo_resultados)
+        print(analyzer.generar_reporte())
+        analyzer.guardar_reporte("reporte_detallado.txt")
+    except ImportError:
+        print("⚠️  Módulo de análisis no disponible")
+    except Exception as e:
+        print(f"⚠️  Error en análisis: {e}")
+
+    return results, archivo_resultados
 
 if __name__ == "__main__":
-    results = main()
-    if results:
+    try:
+        resultados, archivo = main()
         print(f"\n✅ Simulación completada exitosamente!")
-        print(f"📈 Estados obtenidos: {len(results)}")
-    else:
-        print(f"\n❌ La simulación falló")
+        print(f"📈 Estados obtenidos: {len(resultados)}")
+        print(f"💾 Archivo de resultados: {archivo}")
+        print(f"📊 Resumen: {sum(resultados.values())} ejecuciones, {len(resultados)} estados únicos")
+
+    except Exception as e:
+        print(f"\n❌ Error durante la ejecución: {e}")
+        sys.exit(1)

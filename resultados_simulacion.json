@@ -1,0 +1,25 @@
+{
+  "metadata": {
+    "timestamp": "2025-09-28T02:36:40.205978",
+    "total_ejecuciones": 1024,
+    "estados_posibles": 4
+  },
+  "resultados_cuanticos": {
+    "01": 262,
+    "11": 254,
+    "00": 272,
+    "10": 236
+  },
+  "estados_bardo": [
+    "chonyid_bardo",
+    "sidpa_bardo",
+    "clear_light",
+    "intermediate"
+  ],
+  "probabilidades": [
+    0.3,
+    0.4,
+    0.2,
+    0.1
+  ]
+}

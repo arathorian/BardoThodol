@@ -1,0 +1,21 @@
+
+📊 REPORTE DE SIMULACIÓN - BARDO THÖDOL
+==================================================
+
+📈 ESTADÍSTICAS GENERALES:
+• Total de ejecuciones: 1,024
+• Estados cuánticos únicos: 4
+• Entropía de Shannon: 1.998 bits
+• Grado de uniformidad: 99.9%
+
+🎯 DISTRIBUCIÓN:
+• Estado más probable: 00
+  (272 ocurrencias, 26.6%)
+• Estado menos probable: 10
+  (236 ocurrencias, 23.0%)
+
+🌌 ESTADOS DEL BARDO:
+• chonyid_bardo: 30.0%
+• sidpa_bardo: 40.0%
+• clear_light: 20.0%
+• intermediate: 10.0%
