@@ -1,0 +1,38 @@
+{
+  "bardo_states": {
+    "chonyid_bardo": {
+      "name": "Bardo del Dharmata",
+      "description": "Estado de realidad pura tras la muerte, donde se manifiestan las luminosidades y sonidos fundamentales",
+      "base_probability": 0.3,
+      "duration": "3-4 días",
+      "characteristics": ["luz clara", "sonidos primordiales", "visiones pacíficas"]
+    },
+    "sidpa_bardo": {
+      "name": "Bardo del Devenir",
+      "description": "Estado de búsqueda de renacimiento con experiencias kármicas",
+      "base_probability": 0.4,
+      "duration": "hasta 49 días",
+      "characteristics": ["visiones kármicas", "búsqueda de refugio", "tendencia al renacimiento"]
+    },
+    "clear_light": {
+      "name": "Luz Clara Primordial",
+      "description": "Estado de conciencia pura no dual anterior a la formación de los bardos",
+      "base_probability": 0.2,
+      "duration": "instantáneo",
+      "characteristics": ["no dualidad", "pureza primordial", "liberación potencial"]
+    },
+    "intermediate": {
+      "name": "Estado Intermedio",
+      "description": "Transición entre estados del bardo",
+      "base_probability": 0.1,
+      "duration": "variable",
+      "characteristics": ["transición", "fluidez", "potencial de transformación"]
+    }
+  },
+  "quantum_mapping": {
+    "00": "chonyid_bardo",
+    "01": "sidpa_bardo",
+    "10": "clear_light",
+    "11": "intermediate"
+  }
+}
