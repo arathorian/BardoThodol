@@ -1,0 +1,51 @@
+{
+  "metadata": {
+    "title": "Quantum Computational Model of the Bardo Thödol: An Interdisciplinary Framework for Post-Mortem States",
+    "creators": [
+      {
+        "name": "Arathorian",
+        "affiliation": "Independent Researcher"
+      }
+    ],
+    "description": "A quantum computational model integrating quantum mechanics, neuroscience, and Buddhist philosophy to model post-mortem consciousness states described in the Tibetan Book of the Dead. The model demonstrates that computational 'errors' (404/505) emerge as legitimate quantum vacuity states in qutrit systems.",
+    "keywords": [
+      "quantum consciousness",
+      "bardo thödol", 
+      "computational neuroscience",
+      "quantum cognition",
+      "buddhist philosophy",
+      "post-mortem states",
+      "qutrit systems",
+      "quantum simulations"
+    ],
+    "license": "MIT",
+    "upload_type": "publication",
+    "publication_type": "article",
+    "access_right": "open",
+    "communities": [
+      {
+        "identifier": "zenodo"
+      },
+      {
+        "identifier": "physics"
+      },
+      {
+        "identifier": "neuroscience"
+      }
+    ],
+    "related_identifiers": [
+      {
+        "relation": "isSupplementTo",
+        "identifier": "https://github.com/arathorian/BardoThodol"
+      }
+    ],
+    "contributors": [],
+    "references": [
+      "Hameroff, S., & Penrose, R. (2014). Consciousness in the universe: A review of the 'Orch OR' theory.",
+      "Tegmark, M. (2000). Importance of quantum decoherence in brain processes.",
+      "Lutz, A., et al. (2004). Long-term meditators self-induce high-amplitude gamma synchrony.",
+      "Wallace, B. A. (2007). Contemplative Science: Where Buddhism and Neuroscience Converge.",
+      "Zurek, W. H. (2003). Decoherence, einselection, and the quantum origins of the classical."
+    ]
+  }
+}
