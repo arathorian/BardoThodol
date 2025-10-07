@@ -1,0 +1,6 @@
+# Operador Kármico Generalizado
+# $\hat{H}_{\text{karma}}$: Hamiltonian con memoria kármica
+# $\hat{L}_i$: Operadores de Lindblad para decoherencia
+# $\rho$: Matriz densidad del estado mental
+
+\hat{K} = \exp\left(-i\hat{H}_{\text{karma}} t\right) + \sum_i \left(\hat{L}_i \rho \hat{L}_i^\dagger - \frac{1}{2}\{\hat{L}_i^\dagger \hat{L}_i, \rho\}\right)

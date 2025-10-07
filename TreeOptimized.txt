@@ -1,2 +1,28 @@
-
 ## 🌳 Estructura de Carpetas Optimizada
+BardoQuantumModel/
+├── 📁 src/
+│ ├── 📁 core/
+│ │ ├── 🐍 quantum_models_optimized.py # Modelo unificado
+│ │ ├── 🐍 quantum_validator.py # Validación científica
+│ │ ├── 🐍 karma_dynamics.py # Dinámica kármica
+│ │ └── 🐍 error505_analysis.py # Análisis ERROR 505
+│ ├── 📁 simulations/
+│ │ ├── 🐍 advanced_simulator.py # Simulador principal
+│ │ ├── 🐍 statistical_analyzer.py # Análisis estadístico
+│ │ └── 🐍 experimental_design.py # Diseño experimental
+│ └── 📁 utils/
+│ ├── 🐍 config_manager.py # Gestión configuración
+│ └── 🐍 data_processor.py # Procesamiento datos
+├── 📁 docs/
+│ ├── 📄 theoretical_framework.md # Marco teórico
+│ ├── 📄 technical_manual.md # Manual técnico
+│ ├── 📄 api_reference.md # Referencia API
+│ └── 📄 linux_debian_guide.md # Guía específica Linux
+├── 📁 tests/
+│ ├── 🐍 test_quantum_models.py # Tests modelos
+│ ├── 🐍 test_validators.py # Tests validación
+│ └── 🐍 test_integration.py # Tests integración
+├── 📄 requirements.txt # Dependencias
+├── 📄 setup.py # Instalación
+├── 📄 README.md # Documentación principal
+└── 📄 bardo_quantum_paper.pdf # Paper científico
