@@ -1,0 +1,8 @@
+@software{bardo_quantum_2025,
+  title = {Quantum Computational Model of the Bardo Thödol},
+  author = {Horacio Hamann},
+  year = {2025},
+  publisher = {Zenodo},
+  doi = {10.5281/zenodo.XXXXXXX},
+  url = {https://doi.org/10.5281/zenodo.XXXXXXX}
+}

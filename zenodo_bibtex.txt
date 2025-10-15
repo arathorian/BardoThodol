@@ -1,0 +1,8 @@
+@software{bardo_quantum_2024,
+  title = {Quantum Computational Model of the Bardo Thödol},
+  author = {Arathorian},
+  year = {2024},
+  publisher = {Zenodo},
+  doi = {10.5281/zenodo.XXXXXXX},
+  url = {https://doi.org/10.5281/zenodo.XXXXXXX}
+}

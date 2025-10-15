@@ -45,7 +45,7 @@ def check_imports(base_dir="."):
         for imp in imports:
             # Chequeo simple: si no existe en los módulos locales y no parece ser lib estándar
             if not any(imp == m or imp.startswith(m + ".") for m in available_modules):
-                if imp not in ["os", "sys", "math", "time", "re", "json", "unittest", 
+                if imp not in ["os", "sys", "math", "time", "re", "json", "unittest",
                                "numpy", "scipy", "matplotlib", "seaborn", "qiskit"]:
                     broken_imports.setdefault(pyfile, []).append(imp)
 

@@ -1,9 +1,93 @@
-# Crear requirements.txt actualizado con las versiones ya instaladas
-cat > requirements.txt << 'EOF'
+# Core Scientific Computing
 qiskit==2.2.0
 numpy==2.3.3
 matplotlib==3.10.6
 scipy==1.16.2
 seaborn==0.13.2
 python-dotenv==1.1.1
-EOF
+
+# Quantum Computing Framework
+qiskit>=0.45.0
+qiskit-aer>=0.12.0
+qiskit-ibm-runtime>=0.12.0
+qiskit-machine-learning>=0.6.0
+
+# Advanced Data Science & Machine Learning
+scikit-learn>=1.0.0
+networkx>=2.6.0
+pillow>=9.0.0
+joblib>=1.1.0
+threadpoolctl>=3.0.0
+
+# Interactive Visualization
+plotly>=5.0.0
+plotly-express>=0.4.0
+bokeh>=2.4.0
+altair>=4.2.0
+ipywidgets>=8.0.0
+
+# Utilities & Configuration
+tqdm>=4.62.0
+colorama>=0.4.4
+pyyaml>=6.0
+python-dotenv>=0.19.0
+click>=8.0.0
+rich>=13.0.0
+
+# Documentation & Reporting
+sphinx>=7.0.0
+sphinx-rtd-theme>=1.0.0
+nbsphinx>=0.9.0
+sphinxcontrib-bibtex>=2.0.0
+pydata-sphinx-theme>=0.13.0
+
+# Development & Testing
+pytest>=7.0.0
+pytest-cov>=4.0.0
+pytest-xdist>=3.0.0
+pytest-timeout>=2.1.0
+black>=23.0.0
+flake8>=6.0.0
+mypy>=1.0.0
+pre-commit>=3.0.0
+coverage>=7.0.0
+
+# Jupyter Ecosystem
+jupyter>=1.0.0
+ipympl>=0.9.0
+notebook>=6.4.0
+jupyter-contrib-nbextensions>=0.5.0
+jupyterlab>=3.0.0
+
+# Type Hints & Modern Python
+typing-extensions>=4.0.0
+dataclasses-json>=0.5.0
+pydantic>=1.10.0
+
+# Data Serialization & Storage
+ujson>=5.0.0
+pyarrow>=10.0.0
+h5py>=3.0.0
+zarr>=2.0.0
+
+# Performance Optimization
+numba>=0.56.0
+dask>=2021.0.0
+dask-jobqueue>=0.8.0
+
+# Security & Code Quality
+safety>=2.0.0
+bandit>=1.7.0
+semgrep>=1.0.0
+
+# Date & Time Handling
+python-dateutil>=2.8.0
+pytz>=2021.0
+
+# Optional: Advanced Mathematics
+sympy>=1.9.0
+statsmodels>=0.13.0
+
+# Optional: Interactive Development
+ipython>=8.0.0
+jedi>=0.18.0
