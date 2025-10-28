@@ -9,7 +9,7 @@ Actualicemos el archivo `zenodo_metadata.json` para que coincida con la versión
     "title": "Quantum Computational Model of the Bardo Thödol: An Interdisciplinary Framework for Post-Mortem States",
     "creators": [
       {
-        "name": "Arathorian",
+        "name": "Horacio Héctor Hamann",
         "affiliation": "Independent Researcher"
       }
     ],
