@@ -1,0 +1,25 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {1}Introducción: Marco Conceptual del Bardo Thödol como Algoritmo Cuántico}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Hipótesis Principal Extendida}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Problema Fundamental con Modelos Clásicos}{2}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Contribuciones Principales}{2}{subsection.1.3}%
+\contentsline {section}{\numberline {2}Marco Teórico Expandido}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Sistema de Qutrits Completo para Estados Bardo}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Operadores Kármicos Extendidos}{3}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Modelo de Matrices CPT Duales}{5}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Implementación Técnica Completa}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Evolución Temporal de Estados}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Análisis del ERROR 505 como Estado de Vacuidad}{6}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Circuitos Cuánticos para Simulación Bardo}{6}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Resultados y Análisis Cuantitativo}{6}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Distribución Estadística de Estados}{6}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Interpretación del ERROR 505}{6}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Validación Científica}{7}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Discusión: Implicaciones Filosóficas y Científicas}{8}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Puente entre Filosofía Budista y Computación Cuántica}{8}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Implicaciones para Modelos de Conciencia}{8}{subsection.5.2}%
+\contentsline {section}{\numberline {6}Conclusión y Trabajo Futuro}{8}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Conclusiones Principales}{8}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Direcciones Futuras}{9}{subsection.6.2}%
+\contentsline {section}{\numberline {A}Implementación de Código}{9}{appendix.Alph1}%
+\contentsline {section}{\numberline {B}Generación Automática de Gráficos}{9}{appendix.Alph2}%

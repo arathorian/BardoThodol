@@ -1,6 +1,6 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2025.9.28)  28 OCT 2025 07:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2025.9.28)  28 OCT 2025 08:05
 entering extended mode
- \write18 enabled.
+ restricted \write18 enabled.
  %&-line parsing enabled.
 **main.tex
 (./main.tex
@@ -937,28 +937,274 @@ Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
 \extratabsurround=\skip64
 \backup@length=\skip65
 \ar@cellbox=\box78
-)) (./main.aux)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen307
+\lightrulewidth=\dimen308
+\cmidrulewidth=\dimen309
+\belowrulesep=\dimen310
+\belowbottomsep=\dimen311
+\aboverulesep=\dimen312
+\abovetopsep=\dimen313
+\cmidrulesep=\dimen314
+\cmidrulekern=\dimen315
+\defaultaddspace=\dimen316
+\@cmidla=\count342
+\@cmidlb=\count343
+\@aboverulesep=\dimen317
+\@belowrulesep=\dimen318
+\@thisruleclass=\count344
+\@lastruleclass=\count345
+\@thisrulewidth=\dimen319
+)
+(/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+Package: l3keys2e 2023-01-16 LaTeX2e option processing using LaTeX3 keys
+)
+Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
+\g__lipsum_par_int=\count346
+\l__lipsum_a_int=\count347
+\l__lipsum_b_int=\count348
+
+(/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex))
+
+! LaTeX Error: Command \bra already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.28 \newcommand{\bra}[1]{\langle #1 |}
+                                       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \ket already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.29 \newcommand{\ket}[1]{| #1 \rangle}
+                                       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \braket already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.30 ...mmand{\braket}[2]{\langle #1 | #2 \rangle}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+\c@definition=\count349
+\c@theorem=\count350
+No file main.aux.
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Info: Redefining \. on input line 27.
-LaTeX Info: Redefining \% on input line 27.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Info: Redefining \. on input line 46.
+LaTeX Info: Redefining \% on input line 46.
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count351
+\scratchdimen=\dimen320
+\scratchbox=\box79
+\nofMPsegments=\count352
+\nofMParguments=\count353
+\everyMPshowfont=\toks56
+\MPscratchCnt=\count354
+\MPscratchDim=\dimen321
+\MPnumerator=\count355
+\makeMPintoPDFobject=\count356
+\everyMPtoPDFconversion=\toks57
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
 
-(/usr/share/texlive/texmf-dist/tex/context/base/mk
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: hyperref package is loaded.
+Package caption Info: End \AtBeginDocument code.
+Package hyperref Info: Link coloring ON on input line 46.
+\@outlinefile=\write4
+\openout4 = `main.out'.
+
+
+Package pgfplots notification 'compat/show suggested version=true': document ha
+s been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/translations/translations-basic-dictio
+nary-spanish.trsl
+File: translations-basic-dictionary-spanish.trsl (spanish translation file `tra
+nslations-basic-dictionary')
+)
+Package translations Info: loading dictionary `translations-basic-dictionary' f
+or `spanish'. on input line 46.
+
+No file main.toc.
+\tf@toc=\write5
+\openout5 = `main.toc'.
+
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+! Undefined control sequence.
+l.81     \mathcal{L}_{\text{binaria}} \nmodels
+                                               \text{śūnyatā}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (10.1139pt too wide) in paragraph at lines 90--91
+[]\OT1/cmr/m/n/12 Formalizaci^^Son ma-tem^^Sati-ca de ope-ra-do-res k^^Sarmi-co
+s co-mo din^^Sami-ca cu^^Santi-
+ []
+
+[2]
+<graphics/generated/qutrit_space.png, id=34, 469.5141pt x 474.8139pt>
+File: graphics/generated/qutrit_space.png Graphic file (type png)
+<use graphics/generated/qutrit_space.png>
+Package pdftex.def Info: graphics/generated/qutrit_space.png  used on input lin
+e 118.
+(pdftex.def)             Requested size: 331.50238pt x 335.251pt.
+ [3] [4 <./graphics/generated/qutrit_space.png>]
+<graphics/generated/state_evolution.png, id=59, 723.6636pt x 395.076pt>
+File: graphics/generated/state_evolution.png Graphic file (type png)
+<use graphics/generated/state_evolution.png>
+Package pdftex.def Info: graphics/generated/state_evolution.png  used on input 
+line 160.
+(pdftex.def)             Requested size: 370.49881pt x 202.26978pt.
+
+
+LaTeX Warning: Reference `fig:state_evolution' on page 5 undefined on input lin
+e 165.
+
+<graphics/generated/error505_analysis.png, id=60, 593.5776pt x 506.3718pt>
+File: graphics/generated/error505_analysis.png Graphic file (type png)
+<use graphics/generated/error505_analysis.png>
+Package pdftex.def Info: graphics/generated/error505_analysis.png  used on inpu
+t line 177.
+(pdftex.def)             Requested size: 331.50238pt x 282.80133pt.
+[5 <./graphics/generated/state_evolution.png>] [6 <./graphics/generated/error50
+5_analysis.png>]
+Overfull \hbox (28.2263pt too wide) in paragraph at lines 244--244
+[]\OT1/cmr/bx/n/17.28 Discusi^^Son: Im-pli-ca-cio-nes Fi-los^^Sofi-cas y Cient^
+^S^^Pfi-
+ []
+
+
+Overfull \hbox (28.77945pt too wide) in paragraph at lines 246--246
+[]\OT1/cmr/bx/n/14.4 Puente en-tre Fi-lo-sof^^S^^Pa Bu-dis-ta y Compu-taci^^Son
+ Cu^^Santi-
+ []
+
+
+Overfull \hbox (24.37161pt too wide) in paragraph at lines 253--265
+ [][] 
+ []
+
+[7]
+Overfull \hbox (8.38199pt too wide) in paragraph at lines 281--282
+[]\OT1/cmr/m/n/12 El Bar-do Th^^?odol pue-de mo-de-lar-se efec-ti-va-men-te co-
+mo un sis-te-ma compu-
+ []
+
+
+Overfull \hbox (0.58345pt too wide) in paragraph at lines 282--283
+[]\OT1/cmr/m/n/12 Los ``erro-res'' 404/505 re-pre-sen-tan es-ta-dos leg^^S^^Pti
+-mos de va-cui-dad cu^^Santi-
+ []
+
+[8]
+Overfull \hbox (18.4364pt too wide) in paragraph at lines 300--302
+\OT1/cmr/m/n/12 mu-la-ci^^Son est^^San dis-po-ni-bles en el re-po-si-to-rio: []
+[]$\OT1/cmtt/m/n/12 https : / / github . com / arathorian /
+ []
+
+[9] (./main.aux
+LaTeX Info: Redefining \. on input line 22.
+LaTeX Info: Redefining \% on input line 22.
+)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  2C070BB786CAB1C062D24AB990D9BD94;5761.
+ ) 
+Here is how much of TeX's memory you used:
+ 41221 strings out of 476091
+ 985616 string characters out of 5794081
+ 1892330 words of memory out of 5000000
+ 60910 multiletter control sequences out of 15000+600000
+ 523422 words of font info for 75 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 116i,18n,131p,1194b,1642s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
+y10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (9 pages, 1216923 bytes).
+PDF statistics:
+ 203 PDF objects out of 1000 (max. 8388607)
+ 154 compressed objects within 2 object streams
+ 64 named destinations out of 1000 (max. 500000)
+ 28 words of extra memory for PDF output out of 10000 (max. 10000000)
+
