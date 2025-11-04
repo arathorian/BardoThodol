@@ -5,14 +5,14 @@
 📈 ESTADÍSTICAS GENERALES:
 • Total de ejecuciones: 1,024
 • Estados cuánticos únicos: 4
-• Entropía de Shannon: 1.998 bits
+• Entropía de Shannon: 1.999 bits
 • Grado de uniformidad: 99.9%
 
 🎯 DISTRIBUCIÓN:
-• Estado más probable: 00
+• Estado más probable: 11
   (272 ocurrencias, 26.6%)
-• Estado menos probable: 10
-  (236 ocurrencias, 23.0%)
+• Estado menos probable: 00
+  (246 ocurrencias, 24.0%)
 
 🌌 ESTADOS DEL BARDO:
 • chonyid_bardo: 30.0%

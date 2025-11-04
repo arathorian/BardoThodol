@@ -1,29 +1,30 @@
-# Simulación Cuántica de Estados Post-Mortem del Bardo Thödol
+# 🌀 Bardo Thödol Quantum Simulation Project
+*Simulación Cuántica de Estados de Consciencia Basada en el Bardo Thödol*
 
-Este proyecto investiga el **Bardo Thödol** (Libro Tibetano de los Muertos) desde un enfoque interdisciplinario que combina neurociencia, física cuántica y ciencias cognitivas. El objetivo es **analizar y simular los estados de conciencia** descritos en el texto, generando evidencia gráfica y modelos reproducibles.
+[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
+[![QuTiP](https://img.shields.io/badge/QuTiP-4.7+-green.svg)](https://qutip.org/)
+[![Debian 12](https://img.shields.io/badge/Debian-12-FF69B4.svg)](https://www.debian.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+## 🌟 Visión Interdisciplinaria
+
+Este proyecto establece un puente innovador entre la sabiduría contemplativa tibetana y la computación cuántica moderna, proponiendo que el **Bardo Thödol** (Libro Tibetano de los Muertos) puede ser interpretado como un algoritmo ancestral que describe la dinámica de estados de consciencia, susceptible de modelado mediante sistemas cuánticos de múltiples estados.
+
+> **Hipótesis Central**: Los estados post-mortem descritos en el Bardo Thödol pueden ser simulados mediante sistemas de qutrits, donde la vacuidad (śūnyatā) corresponde a estados de superposición cuántica no colapsados.
 
 ---
 
-## 1. Entrenamiento en Vida: Simuladores de Conciencia
-El Bardo Thödol no es exclusivo para el más allá: se utiliza en vida como **entrenamiento de la conciencia**.
+## 🧠 Marco Teórico Fundamental
 
-- **Tukdam:** monjes mantienen actividad cerebral gamma días después de la muerte clínica (Mind and Life Institute, 2023).  
-- **Neuroplasticidad inducida:** MRI funcional revela activación voluntaria de redes neuronales asociadas a ECM.  
-- **Coherencia cuántica en microtúbulos:** validada por el Penrose-Hameroff Consortium (2024).  
+### Sistema de Estados Cuánticos (Qutrit)
 
----
+| Estado | Representación | Interpretación Filosófica | Operador |
+|--------|----------------|---------------------------|----------|
+| \|0⟩ | `[1, 0, 0]ᵀ` | **Samsara** - Realidad manifiesta | `P₀ = |0⟩⟨0|` |
+| \|1⟩ | `[0, 1, 0]ᵀ` | **Potencial Kármico** - Estados latentes | `P₁ = |1⟩⟨1|` |
+| \|2⟩ | `[0, 0, 1]ᵀ` | **Śūnyatā** - Vacuidad fundamental | `P₂ = |2⟩⟨2|` |
 
-## 2. Deidades como Interfaces Neuroprogramables
-Las deidades descritas en el texto no son entes externos, sino **interfaces biológicas programables** que permiten reestructurar la percepción.
+### Hamiltoniano Kármico
 
-- **Activaciones cerebrales:**
-  - Pacíficas → corteza prefrontal medial (empatía).  
-  - Coléricas → amígdala + ínsula (miedo/transformación).  
-
-- **Firmas cuánticas:**
-```python
-deidad_pacifica = {
-    "frecuencia": "528Hz",
-    "receptores": ["NMDA_GluN2B", "5-HT2A"],
-    "efecto": "reprogramación kármica"
-}
+```math
+\hat{H}_K = \sum_{i≠j} k_{ij}(|i⟩⟨j| + |j⟩⟨i|) + \sum_i \epsilon_i |i⟩⟨i|

@@ -1,8 +1,130 @@
-@software{bardo_quantum_2025,
-  title = {Quantum Computational Model of the Bardo Thödol},
-  author = {Horacio Hamann},
-  year = {2025},
-  publisher = {Zenodo},
-  doi = {10.5281/zenodo.XXXXXXX},
-  url = {https://doi.org/10.5281/zenodo.XXXXXXX}
+%% bibtex.txt - Referencias principales para Bardo Thödol Quantum Simulation
+%% Formato BibTeX para importación directa
+%% Autor: Horacio Héctor Hamann
+%% Repositorio: https://github.com/arathorian/BardoThodol
+
+@BOOK{fremantle2001tibetan,
+  title     = {The Tibetan Book of the Dead: The Great Liberation through Hearing
+               in the Bardo},
+  author    = {Fremantle, Francesca and Trungpa, Ch{\"o}gyam},
+  year      = {2001},
+  publisher = {Shambhala Publications},
+  address   = {Boston},
+  isbn      = {978-1570627477},
+  keywords  = {bardo,tibetan,buddhism}
+}
+
+@BOOK{nielsen2010quantum,
+  title     = {Quantum Computation and Quantum Information: 10th Anniversary Edition},
+  author    = {Nielsen, Michael A. and Chuang, Isaac L.},
+  year      = {2010},
+  publisher = {Cambridge University Press},
+  address   = {Cambridge},
+  doi       = {10.1017/CBO9780511976667},
+  isbn      = {978-1107002173},
+  keywords  = {quantum computation,quantum information}
+}
+
+@ARTICLE{hameroff2014consciousness,
+  title    = {Consciousness in the universe: A review of the 'Orch OR' theory},
+  author   = {Hameroff, Stuart and Penrose, Roger},
+  journal  = {Physics of Life Reviews},
+  volume   = {11},
+  number   = {1},
+  pages    = {39--78},
+  year     = {2014},
+  publisher = {Elsevier},
+  doi      = {10.1016/j.plrev.2013.08.002},
+  keywords = {consciousness,quantum,orchestrated objective reduction}
+}
+
+@BOOK{wallace2007contemplative,
+  title     = {Contemplative Science: Where Buddhism and Neuroscience Converge},
+  author    = {Wallace, B. Alan},
+  year      = {2007},
+  publisher = {Columbia University Press},
+  address   = {New York},
+  isbn      = {978-0231138345},
+  keywords  = {contemplative science,buddhism,neuroscience}
+}
+
+@ARTICLE{lanyon2008manipulating,
+  title    = {Manipulating Biphotonic Qutrits},
+  author   = {Lanyon, B. P. and Barbieri, M. and Almeida, M. P. and White, A. G.},
+  journal  = {Physical Review Letters},
+  volume   = {100},
+  number   = {6},
+  pages    = {060504},
+  year     = {2008},
+  publisher = {APS},
+  doi      = {10.1103/PhysRevLett.100.060504},
+  keywords = {qutrits,quantum information,photonics}
+}
+
+@ARTICLE{tegmark2000importance,
+  title    = {Importance of quantum decoherence in brain processes},
+  author   = {Tegmark, Max},
+  journal  = {Physical Review E},
+  volume   = {61},
+  number   = {4},
+  pages    = {4194--4206},
+  year     = {2000},
+  publisher = {APS},
+  doi      = {10.1103/PhysRevE.61.4194},
+  keywords = {decoherence,quantum brain,consciousness}
+}
+
+@BOOK{varela1991embodied,
+  title     = {The Embodied Mind: Cognitive Science and Human Experience},
+  author    = {Varela, Francisco J. and Thompson, Evan and Rosch, Eleanor},
+  year      = {1991},
+  publisher = {MIT Press},
+  address   = {Cambridge, MA},
+  isbn      = {978-0262720212},
+  keywords  = {embodied cognition,cognitive science,phenomenology}
+}
+
+@ARTICLE{tononi2004theory,
+  title    = {An information integration theory of consciousness},
+  author   = {Tononi, Giulio},
+  journal  = {BMC Neuroscience},
+  volume   = {5},
+  number   = {1},
+  pages    = {42},
+  year     = {2004},
+  publisher = {BioMed Central},
+  doi      = {10.1186/1471-2202-5-42},
+  keywords = {consciousness,information integration,phi}
+}
+
+@BOOK{nagarjuna1995fundamental,
+  title     = {The Fundamental Wisdom of the Middle Way: Nāgārjuna's Mūlamadhyamakakārikā},
+  author    = {Nāgārjuna and Garfield, Jay L.},
+  year      = {1995},
+  publisher = {Oxford University Press},
+  address   = {New York},
+  isbn      = {978-0195093360},
+  keywords  = {nagarjuna,madhyamaka,buddhist philosophy}
+}
+
+@ARTICLE{zurek2003decoherence,
+  title    = {Decoherence, einselection, and the quantum origins of the classical},
+  author   = {Zurek, Wojciech H.},
+  journal  = {Reviews of Modern Physics},
+  volume   = {75},
+  number   = {3},
+  pages    = {715--775},
+  year     = {2003},
+  publisher = {APS},
+  doi      = {10.1103/RevModPhys.75.715},
+  keywords = {decoherence,quantum-classical transition}
+}
+
+@MISC{hamann2025bardoquantum,
+  title        = {Bardo Thödol Quantum Simulation Project},
+  author       = {Hamann, Horacio Héctor},
+  year         = {2025},
+  howpublished = {\url{https://github.com/arathorian/BardoThodol}},
+  note         = {GitHub repository},
+  keywords     = {bardo,quantum simulation,consciousness}
 }
