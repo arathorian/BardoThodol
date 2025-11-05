@@ -1,0 +1,16 @@
+BardoThodol/
+├── src/
+│   ├── main.py                 # Sistema principal de simulación
+│   ├── quantum_system.py       # Clases de sistemas cuánticos
+│   ├── karmic_operators.py     # Operadores kármicos
+│   ├── visualization.py        # Visualizaciones científicas
+│   └── validation.py           # Validación científica
+├── papers/
+│   ├── main.tex               # Documento principal LaTeX
+│   ├── references.bib         # Base de datos bibliográfica
+│   └── figures/               # Figuras generadas
+├── simulations/
+│   ├── bardo_transitions/     # Datos de simulaciones
+│   └── quantum_metrics/       # Métricas cuánticas
+├── docs/                      # Documentación adicional
+└── tests/                     # Tests unitarios

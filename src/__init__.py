@@ -1,1 +1,1 @@
-# Package initialization
+touch src/__init__.py
