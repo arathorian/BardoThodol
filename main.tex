@@ -1,29 +1,47 @@
 \documentclass[12pt, a4paper]{article}
-\usepackage[spanish]{babel}
+
+\usepackage[spanish,es-noshorthands]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{amsmath, amssymb, amsthm, mathrsfs}
-\usepackage{graphicx}
-\usepackage{wrapfig}
-\usepackage{quantikz}
+\usepackage{physics}
+\usepackage{microtype}
+\usepackage{siunitx}
+\sisetup{
+    output-decimal-marker = {,},
+    group-separator = {.},
+    per-mode = symbol
+}
+
+\usepackage{graphicx, wrapfig, booktabs, multirow, multicol, xcolor}
+\usepackage{geometry, abstract, caption, subcaption}
+\usepackage{listings}
+\usepackage[hyphens]{url}
+\usepackage{hyperref}
+\usepackage{appendix}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+    pdftitle={Simulación Cuántica del Bardo Thodol},
+    pdfauthor={Horacio Hector Hamann},
+    pdfsubject={Computación Cuántica y Filosofía Budista},
+    pdfkeywords={Bardo Thodol, Computación Cuántica, Qutrits, Conciencia, Simulación},
+    breaklinks=true,
+    pdfencoding=auto
+}
+\usepackage{fancyhdr}
+
+% Quantikz después de physics
 \usepackage{tikz}
 \usetikzlibrary{quantikz}
-\usepackage{booktabs}
-\usepackage{multirow}
-\usepackage{multicol}
-\usepackage{xcolor}
-\usepackage{hyperref}
-\usepackage{fancyhdr}
-\usepackage{geometry}
-\usepackage{abstract}
-\usepackage{caption}
-\usepackage{subcaption}
-\usepackage{natbib}
-\usepackage{listings}
-\usepackage{appendix}
 
 % Configuración de geometría
 \geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+
+% SOLUCIÓN COMPLETA: fancyhdr + contador de páginas
+\setlength{\headheight}{14.5pt}
 
 % Configuración de hyperref
 \hypersetup{
@@ -31,10 +49,13 @@
     linkcolor=blue,
     filecolor=magenta,
     urlcolor=cyan,
-    pdftitle={Simulación Cuántica del Bardo Thödol},
-    pdfauthor={Horacio Héctor Hamann},
-    pdfsubject={Computación Cuántica y Filosofía Budista},
-    pdfkeywords={Bardo Thödol, Computación Cuántica, Qutrits, Conciencia, Simulación}
+    pdftitle={Simulacion Cuantica del Bardo Thodol},
+    pdfauthor={Horacio Hector Hamann},
+    pdfsubject={Computacion Cuantica y Filosofia Budista},
+    pdfkeywords={Bardo Thodol, Computacion Cuantica, Qutrits, Conciencia, Simulacion},
+    bookmarksnumbered=true,
+    bookmarksopen=true,
+    pdfstartview=FitH
 }
 
 % Colores personalizados
@@ -43,7 +64,7 @@
 \definecolor{deepgreen}{rgb}{0,0.5,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 
-% Configuración de listings para Python
+% Configuración definitiva de listings
 \lstset{
     language=Python,
     basicstyle=\ttfamily\small,
@@ -62,42 +83,44 @@
     captionpos=b,
     breaklines=true,
     breakatwhitespace=false,
-    escapeinside={\%*}{*)}
+    escapeinside={\%*}{*)},
+    inputencoding=utf8,
+    extendedchars=true,
+    literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+             {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+             {ñ}{{\~n}}1 {Ñ}{{\~N}}1
 }
 
 % Configuración de encabezados
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{\small Simulación Cuántica del Bardo Thödol}
+\fancyhead[L]{\small Simulacion Cuantica del Bardo Thodol}
 \fancyhead[R]{\small \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 
-% Comandos personalizados
-\newcommand{\bra}[1]{\langle #1 |}
-\newcommand{\ket}[1]{| #1 \rangle}
-\newcommand{\braket}[2]{\langle #1 | #2 \rangle}
+% COMANDOS:
 \newcommand{\expected}[1]{\langle #1 \rangle}
 \newcommand{\state}[1]{\ket{\psi_{#1}}}
 \newcommand{\hamiltonian}{\hat{H}}
 \newcommand{\unitary}{\hat{U}}
-\newcommand{\karma}{\hat{K}}
-\newcommand{\vacuum}{\ket{2}}
-\newcommand{\manifest}{\ket{0}}
-\newcommand{\potential}{\ket{1}}
+\newcommand{\karmaop}{\hat{K}}
+\newcommand{\vacuumstate}{\ket{2}}
+\newcommand{\manifeststate}{\ket{0}}
+\newcommand{\potentialstate}{\ket{1}}
 
 % Teoremas y definiciones
 \newtheorem{teorema}{Teorema}
-\newtheorem{definicion}{Definición}
+\newtheorem{definicion}{Definicion}
 \newtheorem{corolario}{Corolario}
 \newtheorem{lema}{Lema}
 
 \title{
-    \textbf{Simulación Cuántica de los Estados de Consciencia del Bardo Thödol:} \\
-    \large Un Enfoque Computacional desde la Teoría de Qutrits y Dinámica Kármica
+    \textbf{Simulacion Cuantica de los Estados de Conciencia del Bardo Thodol:} \\
+    \large Un Enfoque Computacional desde la Teoria de Qutrits y Dinamica Karmica
 }
 
 \author{
-    \textbf{Horacio Héctor Hamann} \\
+    \textbf{Horacio Hector Hamann} \\
     \small \href{https://github.com/arathorian/BardoThodol}{https://github.com/arathorian/BardoThodol}
 }
 
@@ -105,31 +128,31 @@
 
 \begin{document}
 
-% Portada
+% Portada mejorada
 \begin{titlepage}
     \centering
-    \vspace*{2cm}
-
+    \vspace*{1cm}
+    
+    {\Huge \textbf{Simulacion Cuantica del Bardo Thodol}}
+    
+    \vspace{0.5cm}
+    {\Large Modelado de Estados de Conciencia Post-Mortem \\ mediante Sistemas de Qutrits y Operadores Karmicos}
+    
+    \vspace{1.5cm}
+    
     \begin{figure}[h]
         \centering
         \begin{quantikz}
-            \lstick{$\ket{0}$} & \gate{H} & \ctrl{1} & \gate{R_y(\theta)}$ & \meter{} \\
+            \lstick{$\ket{0}$} & \gate{H} & \ctrl{1} & \gate{R_y(\theta)} & \meter{} \\
             \lstick{$\ket{2}$} & \gate{S} & \targ{} & \gate{R_z(\phi)} & \meter{} \\
             \lstick{$\ket{1}$} & \gate{T} & \ctrl{-1} & \gate{H} & \meter{}
         \end{quantikz}
-        \caption{Circuito cuántico representando transiciones entre estados del Bardo}
+        \caption{Circuito cuantico representando transiciones entre estados del Bardo}
     \end{figure}
-
-    \vspace{1cm}
-
-    {\Huge \textbf{Simulación Cuántica del Bardo Thödol}}
-
-    \vspace{0.5cm}
-    {\Large Modelado de Estados de Consciencia Post-Mortem \\ mediante Sistemas de Qutrits y Operadores Kármicos}
 
     \vspace{1.5cm}
 
-    {\large \textbf{Horacio Héctor Hamann}}
+    {\large \textbf{Horacio Hector Hamann}}
 
     \vspace{0.3cm}
     {\small \href{https://github.com/arathorian/BardoThodol}{https://github.com/arathorian/BardoThodol}}
@@ -137,64 +160,70 @@
     \vspace{1cm}
 
     \begin{abstract}
-        \noindent Este artículo presenta un marco teórico y computacional innovador para la simulación cuántica de los estados de consciencia descritos en el \emph{Bardo Thödol} (Libro Tibetano de los Muertos). Proponemos un modelo basado en sistemas de qutrits (estados cuánticos de tres niveles) donde los estados post-mortem son representados como superposiciones cuánticas, y las transiciones kármicas como operadores de evolución temporal dependientes de parámetros de atención y acumulaciones kármicas.
+        \noindent Este articulo presenta un marco teorico y computacional innovador para la simulacion cuantica de los estados de conciencia descritos en el \emph{Bardo Thodol} (Libro Tibetano de los Muertos). Proponemos un modelo basado en sistemas de qutrits (estados cuanticos de tres niveles) donde los estados post-mortem son representados como superposiciones cuanticas, y las transiciones karmicas como operadores de evolucion temporal dependientes de parametros de atencion y acumulaciones karmicas.
 
         \vspace{0.3cm}
-        \noindent Demostramos que la lógica ternaria cuántica supera fundamentalmente las limitaciones de los modelos binarios clásicos para representar la no-dualidad de la vacuidad (śūnyatā), reinterpretando el estado de "ERROR 505" metafórico como superposición cuántica no colapsada $\ket{2}$. El modelo incluye simulaciones completas de los seis Bardos, operadores de decoherencia kármica y visualizaciones científicas que validan la hipótesis central.
+        \noindent Demostramos que la logica ternaria cuantica supera fundamentalmente las limitaciones de los modelos binarios clasicos para representar la no-dualidad de la vacuidad (sunyata), reinterpretando el estado de "ERROR 505" metaforico como superposicion cuantica no colapsada $\ket{2}$. 
 
         \vspace{0.3cm}
-        \noindent \textbf{Palabras clave:} Bardo Thödol, Computación Cuántica, Qutrits, Estados de Consciencia, Simulación, Śūnyatā, Karma, Decoherencia Cuántica
+        \noindent \textbf{Palabras clave:} Bardo Thodol, Computacion Cuantica, Qutrits, Estados de Conciencia, Simulacion, Sunyata, Karma, Decoherencia Cuantica
     \end{abstract}
 
     \vfill
-
     {\small Proyecto iniciado en Enero 2025 · Publicado en Julio 2025}
 \end{titlepage}
 
+% SOLUCIÓN FINAL: Limpiar página correctamente
+\cleardoublepage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
 % Índice
 \tableofcontents
-\newpage
+\clearpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
 
 % Introducción
-\section{Introducción: Del Texto Sagrado al Algoritmo Cuántico}
+\section{Introduccion: Del Texto Sagrado al Algoritmo Cuantico}
 
 \subsection{Contexto Interdisciplinario}
 
-El \emph{Bardo Thödol}, tradicionalmente interpretado como una guía ritual para la transición post-mortem en la tradición tibetana, es reformulado en este trabajo como un \textbf{algoritmo ancestral} que codifica la dinámica fundamental de estados de consciencia. Esta reinterpretación se sitúa en la intersección de:
+El \emph{Bardo Thodol}, tradicionalmente interpretado como una guia ritual para la transicion post-mortem en la tradicion tibetana, es reformulado en este trabajo como un \textbf{algoritmo ancestral} que codifica la dinamica fundamental de estados de conciencia. Esta reinterpretacion se situa en la interseccion de:
 
 \begin{itemize}
-    \item \textbf{Filosofía Budista Mahāyāna}: Especialmente la doctrina de la vacuidad (śūnyatā) y la naturaleza búdica
-    \item \textbf{Computación Cuántica}: Sistemas de múltiples estados y dinámicas de coherencia-decoherencia
-    \item \textbf{Neurofenomenología}: Estudio científico de los estados de consciencia
-    \item \textbf{Teoría de la Información}: Procesamiento y transición de estados informacionales
+    \item \textbf{Filosofia Budista Mahayana}: Especialmente la doctrina de la vacuidad (sunyata) y la naturaleza budica
+    \item \textbf{Computacion Cuantica}: Sistemas de multiples estados y dinamicas de coherencia-decoherencia
+    \item \textbf{Neurofenomenologia}: Estudio cientifico de los estados de conciencia
+    \item \textbf{Teoria de la Informacion}: Procesamiento y transicion de estados informacionales
 \end{itemize}
 
-\subsection{Hipótesis Central}
+\subsection{Hipotesis Central}
 
-Formulamos nuestra hipótesis fundamental como:
+Formulamos nuestra hipotesis fundamental como:
 
-\begin{definicion}[Hipótesis de Simulación Cuántica del Bardo]
-El Bardo Thödol puede ser modelado como un sistema cuántico de múltiples estados donde:
+\begin{definicion}[Hipotesis de Simulacion Cuantica del Bardo]
+El Bardo Thodol puede ser modelado como un sistema cuantico de multiples estados donde:
 \begin{equation}
 \mathcal{H}_{\text{Bardo}} = \alpha\ket{0} + \beta\ket{1} + \gamma\ket{2}
 \end{equation}
-con $\ket{0}$ representando el estado de realidad manifiesta (samsara), $\ket{1}$ estados potenciales kármicos, y $\ket{2}$ la vacuidad fundamental (śūnyatā), donde $|\alpha|^2 + |\beta|^2 + |\gamma|^2 = 1$.
+con $\ket{0}$ representando el estado de realidad manifiesta (samsara), $\ket{1}$ estados potenciales karmicos, y $\ket{2}$ la vacuidad fundamental (sunyata), donde $|\alpha|^2 + |\beta|^2 + |\gamma|^2 = 1$.
 \end{definicion}
 
-\subsection{Justificación Científica}
+\subsection{Justificacion Cientifica}
 
-La necesidad de un enfoque cuántico surge de las limitaciones fundamentales de los modelos computacionales clásicos:
+La necesidad de un enfoque cuantico surge de las limitaciones fundamentales de los modelos computacionales clasicos:
 
 \begin{itemize}
     \item \textbf{Problema del Dualismo}: Los sistemas binarios no pueden capturar la naturaleza no-dual de la vacuidad
-    \item \textbf{Limitaciones de Turing}: La máquina clásica no puede representar superposiciones coherentes
-    \item \textbf{Naturaleza Probabilística}: El proceso kármico es intrínsecamente probabilístico, no determinista
+    \item \textbf{Limitaciones de Turing}: La maquina clasica no puede representar superposiciones coherentes
+    \item \textbf{Naturaleza Probabilistica}: El proceso karmico es intrinsecamente probabilistico, no determinista
 \end{itemize}
 
 % Marco Teórico
-\section{Marco Teórico: Fundamentos Cuánticos y Filosóficos}
+\section{Marco Teorico: Fundamentos Cuanticos y Filosoficos}
 
-\subsection{Sistema de Qutrits para Estados de Consciencia}
+\subsection{Sistema de Qutrits para Estados de Conciencia}
 
 Definimos nuestro espacio de Hilbert tridimensional para modelar los estados fundamentales:
 
@@ -202,7 +231,7 @@ Definimos nuestro espacio de Hilbert tridimensional para modelar los estados fun
 \mathcal{H} = \text{span}\{\ket{0}, \ket{1}, \ket{2}\}
 \end{equation}
 
-Con los operadores de proyección correspondientes:
+Con los operadores de proyeccion correspondientes:
 
 \begin{equation}
 P_i = \ket{i}\bra{i}, \quad i \in \{0,1,2\}
@@ -211,39 +240,39 @@ P_i = \ket{i}\bra{i}, \quad i \in \{0,1,2\}
 \begin{definicion}[Estados Fundamentales]
 \begin{align*}
 \ket{0} &= \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} \quad \text{(Realidad manifiesta - Samsara)} \\
-\ket{1} &= \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix} \quad \text{(Potencial kármico - Estados latentes)} \\
-\ket{2} &= \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix} \quad \text{(Vacuidad fundamental - Śūnyatā)}
+\ket{1} &= \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix} \quad \text{(Potencial karmico - Estados latentes)} \\
+\ket{2} &= \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix} \quad \text{(Vacuidad fundamental - Sunyata)}
 \end{align*}
 \end{definicion}
 
-\subsection{Hamiltoniano Kármico y Operadores de Evolución}
+\subsection{Hamiltoniano Karmico y Operadores de Evolucion}
 
-El operador de evolución incorpora parámetros kármicos y de atención:
+El operador de evolucion incorpora parametros karmicos y de atencion:
 
 \begin{equation}
 \hamiltonian_K = \sum_{i\neq j} k_{ij}(\ket{i}\bra{j} + \ket{j}\bra{i}) + \sum_i \epsilon_i \ket{i}\bra{i}
 \end{equation}
 
-donde $k_{ij}$ representa los acoplamientos kármicos entre estados y $\epsilon_i$ los potenciales intrínsecos de cada estado.
+donde $k_{ij}$ representa los acoplamientos karmicos entre estados y $\epsilon_i$ los potenciales intrinsecos de cada estado.
 
-\subsection{Los Seis Bardos como Transiciones Cuánticas}
+\subsection{Los Seis Bardos como Transiciones Cuanticas}
 
-Modelamos los seis estados del Bardo como secuencias de transiciones cuánticas:
+Modelamos los seis estados del Bardo como secuencias de transiciones cuanticas:
 
 \begin{enumerate}
     \item \textbf{Bardo del Momento de la Muerte (Chikhai Bardo)}: $\ket{2} \otimes \ket{k}$
-    \item \textbf{Bardo de la Realidad (Chönyid Bardo)}: $\sum_k c_k\ket{k}$
+    \item \textbf{Bardo de la Realidad (Chonyid Bardo)}: $\sum_k c_k\ket{k}$
     \item \textbf{Bardo del Devenir (Sidpa Bardo)}: $\ket{0} \leftarrow$ Medida
 \end{enumerate}
 
 % Metodología
-\section{Metodología: Implementación Computacional}
+\section{Metodologia: Implementacion Computacional}
 
-\subsection{Arquitectura del Sistema de Simulación}
+\subsection{Arquitectura del Sistema de Simulacion}
 
 Implementamos el sistema utilizando Python 3.11 con las siguientes bibliotecas principales:
 
-\begin{lstlisting}[caption=Configuración del entorno de simulación]
+\begin{lstlisting}[caption=Configuration of the simulation environment]
 import numpy as np
 import qutip as qt
 from scipy.linalg import expm
@@ -252,23 +281,23 @@ from mpl_toolkits.mplot3d import Axes3D
 import seaborn as sns
 
 class BardoQuantumSystem:
-    """Sistema principal de simulación cuántica del Bardo"""
+    # Sistema principal de simulacion cuantica del Bardo
 
     def __init__(self, dimensions=3, karma_params=None):
         self.dim = dimensions
         self.karma_operator = self._construct_karma_operator(karma_params)
         self.hamiltonian = self._construct_hamiltonian()
-        self.initial_state = qt.basis(dimensions, 2)  # Estado |2⟩ inicial
+        self.initial_state = qt.basis(dimensions, 2)
         self.state_history = []
         self.time_evolution = []
 
     def _construct_karma_operator(self, params):
-        """Construye operador kármico con parámetros personalizados"""
+        # Construye operador karmico con parametros personalizados
         if params is None:
             params = {'clarity': 0.8, 'attachment': 0.3, 'compassion': 0.9}
 
         K = np.zeros((3, 3), dtype=complex)
-        # Implementación de matriz kármica basada en parámetros
+        # Implementacion de matriz karmica basada en parametros
         K[0,1] = K[1,0] = params['attachment']
         K[1,2] = K[2,1] = params['clarity']
         K[2,0] = K[0,2] = params['compassion']
@@ -276,14 +305,14 @@ class BardoQuantumSystem:
         return qt.Qobj(K)
 \end{lstlisting}
 
-\subsection{Algoritmo de Evolución Temporal}
+\subsection{Algoritmo de Evolucion Temporal}
 
-El algoritmo principal simula la evolución completa a través de los estados del Bardo:
+El algoritmo principal simula la evolucion completa a traves de los estados del Bardo:
 
-\begin{lstlisting}[caption=Algoritmo de evolución del Bardo]
+\begin{lstlisting}[caption=Bardo evolution algorithm]
 def simulate_bardo_transition(self, time_steps=1000,
                             attention_function='logistic'):
-    """Simula la transición completa a través de los estados del Bardo"""
+    # Simula la transicion completa a traves de los estados del Bardo
 
     times = np.linspace(0, 4*np.pi, time_steps)
     results = {
@@ -296,15 +325,15 @@ def simulate_bardo_transition(self, time_steps=1000,
     current_state = self.initial_state
 
     for t in times:
-        # Factor de atención dependiente del tiempo
+        # Factor de atencion dependiente del tiempo
         attention = self._attention_evolution(t, attention_function)
 
-        # Evolución unitaria con Hamiltoniano modificado
+        # Evolucion unitaria con Hamiltoniano modificado
         H_eff = self.hamiltonian + attention * self.karma_operator
         U = (-1j * t * H_eff).expm()
         evolved_state = U * current_state
 
-        # Cálculo de métricas
+        # Calculo de metricas
         probs = [qt.expect(qt.projection(self.dim, i, i), evolved_state)
                 for i in range(self.dim)]
         coherence = self._calculate_coherence(evolved_state)
@@ -323,29 +352,50 @@ def simulate_bardo_transition(self, time_steps=1000,
 % Resultados
 \section{Resultados y Simulaciones}
 
-\subsection{Evolución Temporal de Probabilidades}
+\subsection{Evolucion Temporal de Probabilidades}
 
 \begin{figure}[h]
     \centering
-    \begin{subfigure}{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{figures/state_evolution.png}
-        \caption{Evolución temporal de probabilidades por estado}
-        \label{fig:state_evolution}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{figures/bloch_sphere.png}
-        \caption{Representación en esfera de Bloch para qutrits}
-        \label{fig:bloch_sphere}
-    \end{subfigure}
-    \caption{Resultados de simulación cuántica del Bardo}
+    \includegraphics[width=0.9\textwidth]{figures/state_evolution.pdf}
+    \caption{
+        Evolucion temporal de probabilidades y metricas cuanticas en el sistema Bardo.
+        (A) Probabilidades de los estados fundamentales: Samsara ($\ket{0}$), Potencial Karmico ($\ket{1}$) y Vacuidad ($\ket{2}$).
+        (B) Evolucion de la coherencia cuantica y pureza del estado, mostrando periodos de superposicion coherente y decoherencia.
+    }
+    \label{fig:state_evolution}
 \end{figure}
 
-\subsection{Análisis de Coherencia Cuántica}
+\subsection{Representacion del Espacio de Estados}
 
-La coherencia cuántica se mantiene durante las transiciones entre Bardos, con patrones característicos:
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/bloch_sphere.pdf}
+    \caption{
+        Representacion tridimensional del espacio de estados del qutrit.
+        Los vertices corresponden a los estados base, mientras que la trayectoria muestra la evolucion dinamica del sistema.
+        La esfera transparente ilustra el espacio de Hilbert accesible mediante superposiciones coherentes.
+    }
+    \label{fig:bloch_sphere}
+\end{figure}
+
+\subsection{Analisis de Metricas Cuanticas Avanzadas}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{figures/quantum_metrics.pdf}
+    \caption{
+        Analisis comprehensivo de metricas cuanticas del sistema Bardo.
+        (A) Evolucion de la entropia de Von Neumann, cuantificando la informacion cuantica.
+        (B) Relacion entre coherencia y pureza del estado.
+        (C) Mapa de calor de transiciones entre estados.
+        (D) Analisis espectral de la dinamica de coherencia.
+    }
+    \label{fig:quantum_metrics}
+\end{figure}
+
+\subsection{Analisis de Coherencia Cuantica}
+
+La coherencia cuantica se mantiene durante las transiciones entre Bardos, con patrones caracteristicos:
 
 \begin{equation}
 C(\rho) = \sum_{i\neq j} |\rho_{ij}|
@@ -353,42 +403,42 @@ C(\rho) = \sum_{i\neq j} |\rho_{ij}|
 
 \begin{table}[h]
 \centering
-\caption{Métricas de coherencia por estado del Bardo}
+\caption{Metricas de coherencia por estado del Bardo}
 \begin{tabular}{lccc}
 \toprule
-\textbf{Estado del Bardo} & \textbf{Coherencia} & \textbf{Pureza} & \textbf{Entropía} \\
+\textbf{Estado del Bardo} & \textbf{Coherencia} & \textbf{Pureza} & \textbf{Entropia} \\
 \midrule
 Chikhai Bardo & 0.95 ± 0.02 & 0.98 ± 0.01 & 0.12 ± 0.03 \\
-Chönyid Bardo & 0.87 ± 0.04 & 0.92 ± 0.03 & 0.28 ± 0.05 \\
+Chonyid Bardo & 0.87 ± 0.04 & 0.92 ± 0.03 & 0.28 ± 0.05 \\
 Sidpa Bardo & 0.45 ± 0.07 & 0.78 ± 0.06 & 0.65 ± 0.08 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\subsection{Visualización de Transiciones Kármicas}
+\subsection{Visualizacion de Transiciones Karmicas}
 
-\begin{lstlisting}[caption=Generación de visualizaciones científicas]
+\begin{lstlisting}[caption=Generation of scientific visualizations]
 def create_comprehensive_visualization(results, times):
-    """Crea visualizaciones completas para publicación"""
+    # Crea visualizaciones completas para publicacion
 
     fig = plt.figure(figsize=(20, 12))
 
-    # 1. Evolución de probabilidades
+    # 1. Evolucion de probabilidades
     ax1 = fig.add_subplot(2, 3, 1)
     probabilities = np.array(results['probabilities'])
     ax1.plot(times, probabilities[:, 0], label='$|0\\rangle$ Samsara', linewidth=2)
-    ax1.plot(times, probabilities[:, 1], label='$|1\\rangle$ Kármico', linewidth=2)
+    ax1.plot(times, probabilities[:, 1], label='$|1\\rangle$ Karmico', linewidth=2)
     ax1.plot(times, probabilities[:, 2], label='$|2\\rangle$ Vacuidad', linewidth=2)
     ax1.set_xlabel('Tiempo')
     ax1.set_ylabel('Probabilidad')
     ax1.legend()
     ax1.grid(True, alpha=0.3)
 
-    # 2. Coherencia cuántica
+    # 2. Coherencia cuantica
     ax2 = fig.add_subplot(2, 3, 2)
     ax2.plot(times, results['coherence'], color='purple', linewidth=2)
     ax2.set_xlabel('Tiempo')
-    ax2.set_ylabel('Coherencia Cuántica')
+    ax2.set_ylabel('Coherencia Cuantica')
     ax2.grid(True, alpha=0.3)
 
     # 3. Esfera de Bloch 3D
@@ -400,88 +450,88 @@ def create_comprehensive_visualization(results, times):
 \end{lstlisting}
 
 % Discusión
-\section{Discusión: Implicaciones Interdisciplinarias}
+\section{Discusion: Implicaciones Interdisciplinarias}
 
-\subsection{Validación de la Hipótesis Central}
+\subsection{Validacion de la Hipotesis Central}
 
 Nuestros resultados demuestran que:
 
 \begin{enumerate}
     \item El modelo de qutrits puede representar efectivamente la no-dualidad de la vacuidad
-    \item Las transiciones entre estados del Bardo siguen dinámicas cuánticas coherentes
-    \item El "ERROR 505" metafórico corresponde matemáticamente a estados de superposición no colapsada
+    \item Las transiciones entre estados del Bardo siguen dinamicas cuanticas coherentes
+    \item El "ERROR 505" metaforico corresponde matematicamente a estados de superposicion no colapsada
 \end{enumerate}
 
-\subsection{Comparación con Modelos Clásicos}
+\subsection{Comparacion con Modelos Clasicos}
 
 \begin{table}[h]
 \centering
-\caption{Comparación entre modelos clásicos y cuánticos}
+\caption{Comparacion entre modelos clasicos y cuanticos}
 \begin{tabular}{lcc}
 \toprule
-\textbf{Característica} & \textbf{Modelo Clásico} & \textbf{Modelo Cuántico} \\
+\textbf{Caracteristica} & \textbf{Modelo Clasico} & \textbf{Modelo Cuantico} \\
 \midrule
-Representación de vacuidad & ERROR 505 & Estado $\ket{2}$ \\
+Representacion de vacuidad & ERROR 505 & Estado $\ket{2}$ \\
 Estados superpuestos & No posible & Fundamental \\
-Naturaleza probabilística & Simulada & Intrínseca \\
-Transiciones no-locales & No & Sí \\
-Coherencia temporal & No & Sí \\
+Naturaleza probabilistica & Simulada & Intrinseca \\
+Transiciones no-locales & No & Si \\
+Coherencia temporal & No & Si \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\subsection{Implicaciones para la Ciencia de la Consciencia}
+\subsection{Implicaciones para la Ciencia de la Conciencia}
 
 Nuestro trabajo sugiere que:
 
 \begin{itemize}
-    \item Los estados de consciencia podrían seguir dinámicas cuánticas
-    \item La meditación profunda podría afectar parámetros de coherencia cuántica
-    \item Los modelos computacionales de consciencia deben considerar frameworks cuánticos
+    \item Los estados de conciencia podrian seguir dinamicas cuanticas
+    \item La meditacion profunda podria afectar parametros de coherencia cuantica
+    \item Los modelos computacionales de conciencia deben considerar frameworks cuanticos
 \end{itemize}
 
 % Conclusión
-\section{Conclusión y Trabajo Futuro}
+\section{Conclusion y Trabajo Futuro}
 
 \subsection{Conclusiones Principales}
 
 \begin{enumerate}
-    \item Hemos demostrado la viabilidad de modelar estados de consciencia del Bardo Thödol usando sistemas cuánticos
+    \item Hemos demostrado la viabilidad de modelar estados de conciencia del Bardo Thodol usando sistemas cuanticos
     \item El enfoque de qutrits supera limitaciones fundamentales de modelos binarios
-    \item La vacuidad (śūnyatā) encuentra representación matemática natural en superposiciones cuánticas
-    \item Las dinámicas kármicas pueden ser implementadas como operadores cuánticos
+    \item La vacuidad (sunyata) encuentra representacion matematica natural en superposiciones cuanticas
+    \item Las dinamicas karmicas pueden ser implementadas como operadores cuanticos
 \end{enumerate}
 
 \subsection{Direcciones Futuras}
 
 \begin{itemize}
-    \item \textbf{Validación Experimental}: Integración con datos de meditación avanzada y EEG
-    \item \textbf{Hardware Cuántico}: Implementación en procesadores cuánticos reales (IBM Q, Rigetti)
-    \item \textbf{Modelos Extendidos}: Generalización a sistemas de más estados y dimensiones
-    \item \textbf{Aplicaciones Clínicas}: Potenciales aplicaciones en terapia y estados alterados de consciencia
+    \item \textbf{Validacion Experimental}: Integracion con datos de meditacion avanzada y EEG
+    \item \textbf{Hardware Cuantico}: Implementacion en procesadores cuanticos reales (IBM Q, Rigetti)
+    \item \textbf{Modelos Extendidos}: Generalizacion a sistemas de mas estados y dimensiones
+    \item \textbf{Aplicaciones Clinicas}: Potenciales aplicaciones en terapia y estados alterados de conciencia
 \end{itemize}
 
-\subsection{Impacto Científico}
+\subsection{Impacto Cientifico}
 
-Este trabajo establece un puente sólido entre la sabiduría contemplativa ancestral y la ciencia computacional moderna, abriendo nuevas vías para la investigación interdisciplinaria en:
+Este trabajo establece un puente solido entre la sabiduria contemplativa ancestral y la ciencia computacional moderna, abriendo nuevas vias para la investigacion interdisciplinaria en:
 
 \begin{itemize}
-    \item Filosofía de la mente y ciencia cognitiva
-    \item Computación cuántica y teoría de la información
-    \item Estudios contemplativos y neurofenomenología
+    \item Filosofia de la mente y ciencia cognitiva
+    \item Computacion cuantica y teoria de la informacion
+    \item Estudios contemplativos y neurofenomenologia
 \end{itemize}
 
 % Apéndices
 \begin{appendices}
-\section{Implementación Completa del Código}
+\section{Implementacion Completa del Codigo}
 
 \subsection{Clase Principal del Sistema}
 
-\begin{lstlisting}[caption=Implementación completa de BardoQuantumSystem]
+\begin{lstlisting}[caption=Complete implementation of BardoQuantumSystem]
 class BardoQuantumSystem:
     """
-    Sistema completo de simulación cuántica del Bardo Thödol
-    Implementa estados de qutrit, operadores kármicos y visualización
+    Sistema completo de simulacion cuantica del Bardo Thodol
+    Implementa estados de qutrit, operadores karmicos y visualizacion
     """
 
     def __init__(self, **parameters):
@@ -490,7 +540,7 @@ class BardoQuantumSystem:
         self.metrics = QuantumMetrics()
 
     def set_parameters(self, params):
-        """Configura parámetros del sistema"""
+        """Configura parametros del sistema"""
         self.karma_params = params.get('karma_params', {
             'clarity': 0.8,
             'attachment': 0.3,
@@ -507,7 +557,7 @@ class BardoQuantumSystem:
         })
 
     def initialize_quantum_system(self):
-        """Inicializa el sistema cuántico base"""
+        """Inicializa el sistema cuantico base"""
         self.dimension = 3
         self.states = {
             'samsara': qt.basis(3, 0),
@@ -518,19 +568,19 @@ class BardoQuantumSystem:
         self.current_state = self.states['void']
 \end{lstlisting}
 
-\subsection{Visualizaciones Científicas Avanzadas}
+\subsection{Visualizaciones Cientificas Avanzadas}
 
-\begin{lstlisting}[caption=Sistema avanzado de visualización]
+\begin{lstlisting}[caption=Advanced visualization system]
 class QuantumVisualizer:
-    """Sistema completo de visualización científica"""
+    """Sistema completo de visualizacion cientifica"""
 
     def create_publication_quality_plots(self, results, save_path=None):
-        """Genera figuras de calidad para publicación"""
+        """Genera figuras de calidad para publicacion"""
 
         with plt.style.context('seaborn-v0_8-paper'):
             fig = plt.figure(figsize=(16, 20))
 
-            # Configuración de estilo científico
+            # Configuracion de estilo cientifico
             plt.rcParams.update({
                 'font.size': 12,
                 'axes.titlesize': 14,
@@ -540,22 +590,22 @@ class QuantumVisualizer:
                 'legend.fontsize': 10
             })
 
-            # Gráfico 1: Evolución temporal completa
+            # Grafico 1: Evolucion temporal completa
             ax1 = self._plot_temporal_evolution(fig, 2, 3, 1, results)
 
-            # Gráfico 2: Esfera de Bloch
+            # Grafico 2: Esfera de Bloch
             ax2 = self._plot_bloch_sphere(fig, 2, 3, 2, results)
 
-            # Gráfico 3: Matriz de densidad
+            # Grafico 3: Matriz de densidad
             ax3 = self._plot_density_matrix(fig, 2, 3, 3, results)
 
-            # Gráfico 4: Coherencia y entropía
+            # Grafico 4: Coherencia y entropia
             ax4 = self._plot_quantum_metrics(fig, 2, 3, 4, results)
 
-            # Gráfico 5: Transiciones de fase
+            # Grafico 5: Transiciones de fase
             ax5 = self._plot_phase_transitions(fig, 2, 3, 5, results)
 
-            # Gráfico 6: Diagrama de circuitos cuánticos
+            # Grafico 6: Diagrama de circuitos cuanticos
             ax6 = self._plot_quantum_circuit(fig, 2, 3, 6)
 
             plt.tight_layout()
@@ -568,9 +618,6 @@ class QuantumVisualizer:
 \end{lstlisting}
 \end{appendices}
 
-% Bibliografía
-\bibliographystyle{plain}
-\bibliography{references}
 
 \begin{thebibliography}{99}
 \bibitem{bardo1} Fremantle, F. (2001). \emph{The Tibetan Book of the Dead}. Shambhala Publications.
