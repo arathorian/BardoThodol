@@ -60,27 +60,39 @@ BardoThodol/
 ```
 
  💻 Uso Rápido
-Ejecución Básica --> Simulacion_Basica.py
-Ejemplo de Simulación Avanzada --> Simulacion_Avanzada.py
+
+     Ejecución Básica --> Simulacion_Basica.py
+
+     Ejemplo de Simulación Avanzada --> Simulacion_Avanzada.py
+
+
 
 📊 Resultados y Visualizaciones
 
-El proyecto genera visualizaciones científicas completas:
-1. Evolución Temporal de Estados
+  El proyecto genera visualizaciones científicas completas:
 
-https://docs/images/state_evolution.png
-2. Esfera de Bloch para Qutrits
+     1. Evolución Temporal de Estados
 
-https://docs/images/bloch_sphere_qutrit.png
-3. Análisis de Coherencia Cuántica
+        https://docs/images/state_evolution.png
 
-https://docs/images/quantum_coherence.png
-4. Matrices de Densidad
+     2. Esfera de Bloch para Qutrits
 
-https://docs/images/density_matrix.png
+        https://docs/images/bloch_sphere_qutrit.png
+
+     3. Análisis de Coherencia Cuántica
+
+        https://docs/images/quantum_coherence.png
+
+     4. Matrices de Densidad
+
+        https://docs/images/density_matrix.png
+
 
 🎯 Características Principales
+
+
 ✅ Implementado
+
 
     Sistema de Qutrits completo con estados |0⟩, |1⟩, |2⟩
 
@@ -94,7 +106,10 @@ https://docs/images/density_matrix.png
 
     Paper académico en LaTeX con formato profesional
 
+
+
 🚧 En Desarrolloo
+
 
     Integración con hardware cuántico real (IBM Q)
 
@@ -108,6 +123,7 @@ https://docs/images/density_matrix.png
 
     Publicación_Principal.tex
 
+
 Fundamentos Filosóficos
 
     Bardo Thödol: Texto base de la tradición Nyingma
@@ -116,7 +132,9 @@ Fundamentos Filosóficos
 
     Yogacara: Teoría de la consciencia-only
 
+
 Fundamentos Científicos
+
 
     Computación Cuántica: Qutrits y sistemas de múltiples estados
 
@@ -124,24 +142,39 @@ Fundamentos Científicos
 
     Neurofenomenología: Correlatos neurales de estados de consciencia
 
+
 🔬 Validación Científica
+
     Métricas Implementadas
+
       metrics.py
 
+
 Resultados de Validación
-Métrica	Chikhai Bardo	Chönyid Bardo	Sidpa Bardo
-Coherencia	0.95 ± 0.02	0.87 ± 0.04	0.45 ± 0.07
-Pureza	0.98 ± 0.01	0.92 ± 0.03	0.78 ± 0.06
-Entropía	0.12 ± 0.03	0.28 ± 0.05	0.65 ± 0.08
+
+           Métrica	Chikhai Bardo	Chönyid Bardo	Sidpa Bardo
+
+           Coherencia	0.95 ± 0.02	0.87 ± 0.04	0.45 ± 0.07
+
+           Pureza	0.98 ± 0.01	0.92 ± 0.03	0.78 ± 0.06
+
+           Entropía	0.12 ± 0.03	0.28 ± 0.05	0.65 ± 0.08
+
 
 👨‍💻 Autor y Contribuciones
-Autor Principal
 
-Horacio Héctor Hamann
+      Autor Principal
 
-    📧 Repositorio: https://github.com/arathorian/BardoThodol
+      Horacio Héctor Hamann
 
-    🔬 Áreas: Computación Cuántica, Filosofía de la Mente, Estudios Interdisciplinarios
+              📧 Repositorio: https://github.com/arathorian/BardoThodol
+
+              🔬 Áreas: Computación Cuántica,
+
+                 Filosofía de la Mente,
+
+                 Estudios Interdisciplinarios
+
 
 Línea Temporal del Proyecto
 
@@ -152,6 +185,7 @@ Línea Temporal del Proyecto
     Mayo 2025: Implementación de simulaciones
 
     Julio 2025: Publicación del repositorio y paper
+
 
 Cómo Contribuir
 
@@ -164,3 +198,4 @@ Cómo Contribuir
     Push a la rama (git push origin feature/AmazingFeature)
 
     Abre un Pull Request
+
