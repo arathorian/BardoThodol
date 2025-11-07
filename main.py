@@ -89,20 +89,20 @@ class BardoQuantumSystem:
         return operators
 
     def _construct_karma_operator(self):
-        """Construye operador kármico con parámetros personalizados"""
-        k = np.zeros((3, 3), dtype=complex)
+    """Construye operador kármico ALINEADO con ecuación (4)"""
+    k = np.zeros((3, 3), dtype=complex)
 
-        # Acoplamientos kármicos basados en parámetros
-        k[0,1] = k[1,0] = self.karma_params['attachment']  # |0⟩↔|1⟩
-        k[1,2] = k[2,1] = self.karma_params['clarity']     # |1⟩↔|2⟩
-        k[2,0] = k[0,2] = self.karma_params['compassion']  # |2⟩↔|0⟩
+    # Usar parámetros kármicos definidos, no valores fijos
+    k[0,1] = k[1,0] = self.karma_params['attachment']
+    k[1,2] = k[2,1] = self.karma_params['clarity']
+    k[2,0] = k[0,2] = self.karma_params['compassion']
 
-        # Elementos diagonales representan potenciales intrínsecos
-        k[0,0] = 0.7  # Estabilidad samsárica
-        k[1,1] = 0.6  # Potencial kármico
-        k[2,2] = 0.8  # Claridad vacuidad
+    # Elementos diagonales desde parámetros
+    k[0,0] = self.karma_params.get('samsara_stability', 0.7)
+    k[1,1] = self.karma_params.get('karmic_potential', 0.6)
+    k[2,2] = self.karma_params.get('void_clarity', 0.8)
 
-        return qt.Qobj(k)
+    return qt.Qobj(k)
 
     def _construct_hamiltonian(self):
         """Construye Hamiltoniano según ecuación (4) de main.tex"""

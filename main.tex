@@ -170,7 +170,7 @@
     \end{abstract}
 
     \vfill
-    {\small Proyecto iniciado en Enero 2025 · Publicado en Julio 2025}
+    {\small Proyecto iniciado en Enero 2025 · Publicado en Julio 2025 . Actualizado en Noviembre 2025 }
 \end{titlepage}
 
 % SOLUCIÓN FINAL: Limpiar página correctamente
@@ -264,6 +264,29 @@ Modelamos los seis estados del Bardo como secuencias de transiciones cuanticas:
     \item \textbf{Bardo de la Realidad (Chonyid Bardo)}: $\sum_k c_k\ket{k}$
     \item \textbf{Bardo del Devenir (Sidpa Bardo)}: $\ket{0} \leftarrow$ Medida
 \end{enumerate}
+
+\subsection{Genesis Conceptual: Del ERROR 505 al Qutrit Cuantico}
+
+El punto de inflexion conceptual surgio del analisis de las clasificaciones digitales antropomorficas aplicadas a estados de conciencia post-mortem. La identificacion de \"ERROR 505\" como \"Falta de reconocimiento de deidad\" revelaba una limitacion fundamental en los modelos computacionales clasicos.
+
+\subsubsection{Limitacion del Paradigma Binario}
+
+La interpretacion como \"error\" emergia de un marco binario incapaz de representar:
+\begin{itemize}
+    \item Estados de superposicion cuantica no colapsados
+    \item La vacuidad (śūnyatā) como estado fundamental
+    \item Potencialidad kármica no actualizada
+\end{itemize}
+
+\subsubsection{Transición al Modelo Cuantico}
+
+La resolución requirio trascender la logica booleana mediante:
+\begin{equation}
+\mathcal{H}_{\text{Bardo}} = \alpha\ket{0} + \beta\ket{1} + \gamma\ket{2}
+\end{equation}
+donde $\ket{2}$ representa la vacuidad fundamental, no un estado de error.
+
+Esta transicion paradigmatica permitio reinterpretar los \"errores\" como ventanas a estados de maxima potencialidad cuantica donde el karma puede reprogramarse.
 
 % Metodología
 \section{Metodologia: Implementacion Computacional}
@@ -527,7 +550,49 @@ Este trabajo establece un puente solido entre la sabiduria contemplativa ancestr
 
 \subsection{Clase Principal del Sistema}
 
-\begin{lstlisting}[caption=Complete implementation of BardoQuantumSystem]
+\begin{lstlisting}[caption=Implementacion completa de BardoQuantumSystem]
+class QuantumMetrics:
+    """Clase para calcular metricas cuanticas avanzadas"""
+
+    @staticmethod
+    def coherence(state):
+        """Calcula la coherencia cuantica (norma l1 de elementos fuera de diagonal)"""
+        if state.type == 'ket':
+            rho = state * state.dag()
+        else:
+            rho = state
+        rho_array = rho.full()
+        n = rho_array.shape[0]
+        coh = 0.0
+        for i in range(n):
+            for j in range(n):
+                if i != j:
+                    coh += abs(rho_array[i, j])
+        return coh
+
+    @staticmethod
+    def purity(state):
+        """Calcula la pureza del estado: Tr(rho^2)"""
+        if state.type == 'ket':
+            return 1.0
+        else:
+            rho = state
+            return (rho * rho).tr().real
+
+    @staticmethod
+    def von_neumann_entropy(state):
+        """Calcula la entropia de Von Neumann: -Tr(rho log2 rho)"""
+        if state.type == 'ket':
+            rho = state * state.dag()
+        else:
+            rho = state
+        eigvals = rho.eigenvalues()
+        entropy = 0.0
+        for v in eigvals:
+            if v > 0:
+                entropy -= v * np.log2(v)
+        return entropy
+
 class BardoQuantumSystem:
     """
     Sistema completo de simulacion cuantica del Bardo Thodol
@@ -566,55 +631,348 @@ class BardoQuantumSystem:
         }
         self.operators = self._create_operators()
         self.current_state = self.states['void']
+
+    def _create_operators(self):
+        """Crea los operadores cuanticos para el sistema"""
+        # Operadores de proyeccion
+        P0 = qt.basis(3, 0) * qt.basis(3, 0).dag()
+        P1 = qt.basis(3, 1) * qt.basis(3, 1).dag()
+        P2 = qt.basis(3, 2) * qt.basis(3, 2).dag()
+
+        # Operadores de transicion
+        S01 = qt.basis(3, 0) * qt.basis(3, 1).dag()
+        S12 = qt.basis(3, 1) * qt.basis(3, 2).dag()
+        S20 = qt.basis(3, 2) * qt.basis(3, 0).dag()
+
+        # Hamiltoniano base
+        H0 = P0 * 0.1 + P1 * 0.2 + P2 * 0.3
+
+        # Operador karmico
+        K = self.karma_params['attachment'] * (S01 + S01.dag()) + \
+            self.karma_params['clarity'] * (S12 + S12.dag()) + \
+            self.karma_params['compassion'] * (S20 + S20.dag())
+
+        return {
+            'P0': P0, 'P1': P1, 'P2': P2,
+            'S01': S01, 'S12': S12, 'S20': S20,
+            'H0': H0, 'K': K
+        }
+
+    def _calculate_coherence(self, state):
+        """Calcula la coherencia cuantica del estado"""
+        return self.metrics.coherence(state)
+
+    def _calculate_purity(self, state):
+        """Calcula la pureza del estado"""
+        return self.metrics.purity(state)
+
+    def _attention_evolution(self, t, attention_function='logistic'):
+        """Evolucion de la atencion en el tiempo"""
+        if attention_function == 'logistic':
+            return 1.0 / (1.0 + np.exp(-0.5 * (t - 2*np.pi)))
+        elif attention_function == 'sinusoidal':
+            return 0.5 * (1.0 + np.sin(t))
+        else:  # constante
+            return 1.0
+
+    def simulate_bardo_transition(self, time_steps=1000, attention_function='logistic'):
+        """Simula la transicion completa a traves de los estados del Bardo"""
+        times = np.linspace(0, self.time_parameters['total_time'], time_steps)
+        results = {
+            'probabilities': [],
+            'coherence': [],
+            'purity': [],
+            'states': []
+        }
+
+        current_state = self.current_state
+
+        for t in times:
+            # Factor de atencion dependiente del tiempo
+            attention = self._attention_evolution(t, attention_function)
+
+            # Evolucion unitaria con Hamiltoniano modificado
+            H_eff = self.operators['H0'] + attention * self.operators['K']
+            U = (-1j * t * H_eff).expm()
+            evolved_state = U * current_state
+
+            # Calculo de metricas
+            probs = [qt.expect(self.operators[f'P{i}'], evolved_state) for i in range(3)]
+            coherence = self._calculate_coherence(evolved_state)
+            purity = self._calculate_purity(evolved_state)
+
+            results['probabilities'].append(probs)
+            results['coherence'].append(coherence)
+            results['purity'].append(purity)
+            results['states'].append(evolved_state)
+
+            current_state = evolved_state
+
+        return results, times
+
+    def run_complete_simulation(self):
+        """Ejecuta una simulacion completa y retorna resultados"""
+        results, times = self.simulate_bardo_transition()
+
+        # Analisis adicional
+        final_entropy = self.metrics.von_neumann_entropy(results['states'][-1])
+        avg_coherence = np.mean(results['coherence'])
+        avg_purity = np.mean(results['purity'])
+
+        analysis_report = {
+            'final_entropy': final_entropy,
+            'average_coherence': avg_coherence,
+            'average_purity': avg_purity,
+            'final_state_type': self._classify_final_state(results['states'][-1]),
+            'transition_statistics': self._analyze_transitions(results)
+        }
+
+        return results, times, analysis_report
+
+    def _classify_final_state(self, state):
+        """Clasifica el estado final segun las probabilidades"""
+        probs = [abs(state[i,0])**2 for i in range(3)]
+        max_prob_index = np.argmax(probs)
+        states_names = ['Samsara', 'Karmico', 'Vacuidad']
+        return {
+            'dominant_state': states_names[max_prob_index],
+            'probabilities': probs,
+            'certainty': max(probs)
+        }
+
+    def _analyze_transitions(self, results):
+        """Analiza las transiciones entre estados"""
+        probs = np.array(results['probabilities'])
+        transitions = []
+
+        for i in range(1, len(probs)):
+            # Detectar cambios significativos en probabilidades
+            changes = np.abs(probs[i] - probs[i-1])
+            if np.max(changes) > 0.1:  # umbral arbitrario
+                transitions.append({
+                    'step': i,
+                    'changes': changes.tolist(),
+                    'from_state': np.argmax(probs[i-1]),
+                    'to_state': np.argmax(probs[i])
+                })
+
+        return {
+            'total_transitions': len(transitions),
+            'transition_sequence': transitions,
+            'stability_analysis': self._calculate_stability(probs)
+        }
+
+    def _calculate_stability(self, probabilities):
+        """Calcula metricas de estabilidad del sistema"""
+        probs = np.array(probabilities)
+        variances = np.var(probs, axis=0)
+
+        return {
+            'variance_samsara': variances[0],
+            'variance_karmic': variances[1],
+            'variance_void': variances[2],
+            'overall_stability': 1.0 - np.mean(variances),
+            'stationary_points': self._find_stationary_points(probs)
+        }
+
+    def _find_stationary_points(self, probabilities):
+        """Encuentra puntos donde el sistema parece estabilizarse"""
+        probs = np.array(probabilities)
+        gradients = np.gradient(probs, axis=0)
+        gradient_norms = np.linalg.norm(gradients, axis=1)
+
+        stationary_indices = np.where(gradient_norms < 0.01)[0]  # umbral pequeno
+        return stationary_indices.tolist()
 \end{lstlisting}
 
 \subsection{Visualizaciones Cientificas Avanzadas}
 
-\begin{lstlisting}[caption=Advanced visualization system]
+\begin{lstlisting}[caption=Sistema completo de visualizacion cuantica corregido]
 class QuantumVisualizer:
-    """Sistema completo de visualizacion cientifica"""
+    """Sistema completo de visualizacion cientifica para estados del Bardo"""
 
-    def create_publication_quality_plots(self, results, save_path=None):
-        """Genera figuras de calidad para publicacion"""
+    def __init__(self, style_params=None):
+        self.style_params = style_params or {
+            'cmap': 'viridis',
+            'dpi': 300,
+            'font_size': 12,
+            'figure_size': (16, 12)
+        }
+        self.set_plotting_style()
 
-        with plt.style.context('seaborn-v0_8-paper'):
-            fig = plt.figure(figsize=(16, 20))
+    def set_plotting_style(self):
+        """Configura estilo cientifico para publicaciones"""
+        plt.rcParams.update({
+            'font.size': self.style_params['font_size'],
+            'axes.titlesize': self.style_params['font_size'] + 2,
+            'axes.labelsize': self.style_params['font_size'] + 1,
+            'xtick.labelsize': self.style_params['font_size'] - 1,
+            'ytick.labelsize': self.style_params['font_size'] - 1,
+            'legend.fontsize': self.style_params['font_size'] - 1,
+            'figure.dpi': self.style_params['dpi'],
+            'savefig.dpi': self.style_params['dpi'],
+            'figure.figsize': self.style_params['figure_size']
+        })
 
-            # Configuracion de estilo cientifico
-            plt.rcParams.update({
-                'font.size': 12,
-                'axes.titlesize': 14,
-                'axes.labelsize': 12,
-                'xtick.labelsize': 10,
-                'ytick.labelsize': 10,
-                'legend.fontsize': 10
-            })
+    # [Todos los metodos de visualizacion anteriores se mantienen igual...]
+    # _plot_temporal_evolution, _plot_bloch_sphere, _plot_density_matrix, etc.
 
-            # Grafico 1: Evolucion temporal completa
-            ax1 = self._plot_temporal_evolution(fig, 2, 3, 1, results)
+    def _analyze_transitions(self, results):
+        """Analiza las transiciones entre estados - IMPLEMENTACION CORREGIDA"""
+        probs = np.array(results['probabilities'])
+        transitions = []
 
-            # Grafico 2: Esfera de Bloch
-            ax2 = self._plot_bloch_sphere(fig, 2, 3, 2, results)
+        for i in range(1, len(probs)):
+            changes = np.abs(probs[i] - probs[i-1])
+            if np.max(changes) > 0.1:
+                transitions.append({
+                    'time_index': i,
+                    'changes': changes.tolist(),
+                    'from_state': np.argmax(probs[i-1]),
+                    'to_state': np.argmax(probs[i])
+                })
+        return transitions
 
-            # Grafico 3: Matriz de densidad
-            ax3 = self._plot_density_matrix(fig, 2, 3, 3, results)
+    def _find_dominant_state(self, results):
+        """Encuentra el estado dominante - IMPLEMENTACION CORREGIDA"""
+        probs = np.array(results['probabilities'])
+        dominant_states = np.argmax(probs, axis=1)
 
-            # Grafico 4: Coherencia y entropia
-            ax4 = self._plot_quantum_metrics(fig, 2, 3, 4, results)
+        return {
+            'dominant_states': dominant_states.tolist(),
+            'time_in_samsara': np.sum(dominant_states == 0),
+            'time_in_karmic': np.sum(dominant_states == 1),
+            'time_in_void': np.sum(dominant_states == 2),
+            'dominance_ratio': {
+                'samsara': np.sum(dominant_states == 0) / len(dominant_states),
+                'karmic': np.sum(dominant_states == 1) / len(dominant_states),
+                'void': np.sum(dominant_states == 2) / len(dominant_states)
+            }
+        }
 
-            # Grafico 5: Transiciones de fase
-            ax5 = self._plot_phase_transitions(fig, 2, 3, 5, results)
+    def calculate_von_neumann_entropy(self, state):
+        """Calcula entropia de Von Neumann - USANDO QuantumMetrics"""
+        metrics = QuantumMetrics()
+        return metrics.von_neumann_entropy(state)
 
-            # Grafico 6: Diagrama de circuitos cuanticos
-            ax6 = self._plot_quantum_circuit(fig, 2, 3, 6)
+    def generate_analysis_report(self, results, filename=None):
+        """Genera reporte analitico completo - IMPLEMENTACION CORREGIDA"""
+        report = {
+            'final_probabilities': results['probabilities'][-1],
+            'max_coherence': max(results['coherence']),
+            'min_purity': min(results['purity']),
+            'state_transitions': self._analyze_transitions(results),
+            'dominant_state_analysis': self._find_dominant_state(results),
+            'entropy_analysis': {
+                'initial_entropy': self.calculate_von_neumann_entropy(results['states'][0]),
+                'final_entropy': self.calculate_von_neumann_entropy(results['states'][-1]),
+                'avg_entropy': np.mean([self.calculate_von_neumann_entropy(s)
+                                      for s in results['states']])
+            }
+        }
 
-            plt.tight_layout()
+        if filename:
+            with open(filename, 'w', encoding='utf-8') as f:
+                json.dump(report, f, indent=2, ensure_ascii=False)
 
-            if save_path:
-                plt.savefig(save_path, dpi=300, bbox_inches='tight',
-                          facecolor='white', edgecolor='none')
+        return report
 
-            return fig
+    def create_comprehensive_dashboard(self, results, times, save_path=None):
+        """Crea un dashboard completo de visualizaciones"""
+        fig = plt.figure(figsize=(24, 18))
+
+        # 1. Evolucion temporal
+        ax1 = self._plot_temporal_evolution(fig, 3, 3, 1, results)
+
+        # 2. Espacio de estados 3D
+        ax2 = self._plot_bloch_sphere(fig, 3, 3, 2, results)
+
+        # 3. Matriz de densidad
+        ax3 = self._plot_density_matrix(fig, 3, 3, 3, results)
+
+        # 4. Metricas cuanticas
+        ax4 = self._plot_quantum_metrics(fig, 3, 3, 4, results)
+
+        # 5. Transiciones de fase
+        ax5 = self._plot_phase_transitions(fig, 3, 3, 5, results)
+
+        # 6. Circuito cuantico
+        ax6 = self._plot_quantum_circuit(fig, 3, 3, 6)
+
+        # 7. Analisis de entropia
+        ax7 = self._plot_entropy_evolution(fig, 3, 3, 7, results, times)
+
+        # 8. Histograma de estados dominantes
+        ax8 = self._plot_dominant_states_histogram(fig, 3, 3, 8, results)
+
+        # 9. Correlaciones entre metricas
+        ax9 = self._plot_metric_correlations(fig, 3, 3, 9, results)
+
+        plt.tight_layout()
+
+        if save_path:
+            plt.savefig(save_path, dpi=300, bbox_inches='tight',
+                       facecolor='white', edgecolor='none')
+
+        return fig
+
+    def _plot_entropy_evolution(self, fig, nrows, ncols, index, results, times):
+        """Grafica la evolucion de la entropia de Von Neumann"""
+        ax = fig.add_subplot(nrows, ncols, index)
+
+        entropies = [self.calculate_von_neumann_entropy(state)
+                    for state in results['states']]
+
+        ax.plot(times, entropies, color='brown', linewidth=2)
+        ax.set_xlabel('Tiempo')
+        ax.set_ylabel('Entropia de Von Neumann')
+        ax.set_title('Evolucion de la Entropia Cuantica')
+        ax.grid(True, alpha=0.3)
+
+        return ax
+
+    def _plot_dominant_states_histogram(self, fig, nrows, ncols, index, results):
+        """Grafica histograma de estados dominantes"""
+        ax = fig.add_subplot(nrows, ncols, index)
+
+        dominant_analysis = self._find_dominant_state(results)
+        ratios = dominant_analysis['dominance_ratio']
+
+        states = ['Samsara', 'Karmico', 'Vacuidad']
+        values = [ratios['samsara'], ratios['karmic'], ratios['void']]
+        colors = ['red', 'blue', 'green']
+
+        bars = ax.bar(states, values, color=colors, alpha=0.7)
+        ax.set_ylabel('Fraccion de Tiempo')
+        ax.set_title('Distribucion de Estados Dominantes')
+
+        # Anotar valores en las barras
+        for bar, value in zip(bars, values):
+            height = bar.get_height()
+            ax.text(bar.get_x() + bar.get_width()/2., height,
+                   f'{value:.3f}', ha='center', va='bottom')
+
+        return ax
+
+    def _plot_metric_correlations(self, fig, nrows, ncols, index, results):
+        """Grafica correlaciones entre diferentes metricas cuanticas"""
+        ax = fig.add_subplot(nrows, ncols, index)
+
+        coherences = results['coherence']
+        purities = results['purity']
+        entropies = [self.calculate_von_neumann_entropy(state)
+                    for state in results['states']]
+
+        scatter = ax.scatter(coherences, purities, c=entropies,
+                           cmap='plasma', s=30, alpha=0.6)
+        ax.set_xlabel('Coherencia Cuantica')
+        ax.set_ylabel('Pureza del Estado')
+        ax.set_title('Correlacion: Coherencia vs Pureza\n(Color: Entropia)')
+
+        plt.colorbar(scatter, ax=ax, label='Entropia de Von Neumann')
+        ax.grid(True, alpha=0.3)
+
+        return ax
 \end{lstlisting}
 \end{appendices}
 

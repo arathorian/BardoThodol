@@ -42,12 +42,17 @@ Los Seis Bardos como Transiciones Cuánticas
 
 ```text
 BardoThodol/
+├── main.py                    # Sistema principal de simulación
+├── main.tex                   # Documento principal LaTeX
+├── references.bib             # Base de datos bibliográfica
+├── README.md                  # Este archivo
+├── figures/                   # Figuras generadas (si las hay)
 ├── src/
-│   ├── main.py                 # Sistema principal de simulación
-│   ├── quantum_system.py       # Clases de sistemas cuánticos
-│   ├── karmic_operators.py     # Operadores kármicos
-│   ├── visualization.py        # Visualizaciones científicas
-│   └── validation.py           # Validación científica
+│   ├── main.py                # Sistema principal de simulación
+│   ├── quantum_system.py      # Clases de sistemas cuánticos
+│   ├── karmic_operators.py    # Operadores kármicos
+│   ├── visualization.py       # Visualizaciones científicas
+│   └── validation.py          # Validación científica
 ├── papers/
 │   ├── main.tex               # Documento principal LaTeX
 │   ├── references.bib         # Base de datos bibliográfica
@@ -73,19 +78,19 @@ BardoThodol/
 
      1. Evolución Temporal de Estados
 
-        https://docs/images/state_evolution.png
+        https://github.com/arathorian/BardoThodol/tree/main/figures/state_evolution.png
 
      2. Esfera de Bloch para Qutrits
 
-        https://docs/images/bloch_sphere_qutrit.png
+        https://github.com/arathorian/BardoThodol/tree/main/figures/bloch_sphere_qutrit.png
 
      3. Análisis de Coherencia Cuántica
 
-        https://docs/images/quantum_coherence.png
+        https://github.com/arathorian/BardoThodol/tree/main/figures/quantum_coherence.png
 
      4. Matrices de Densidad
 
-        https://docs/images/density_matrix.png
+        https://github.com/arathorian/BardoThodol/tree/main/figures/density_matrix.png
 
 
 🎯 Características Principales
@@ -159,6 +164,16 @@ Resultados de Validación
            Pureza	0.98 ± 0.01	0.92 ± 0.03	0.78 ± 0.06
 
            Entropía	0.12 ± 0.03	0.28 ± 0.05	0.65 ± 0.08
+
+🎯 Origen Conceptual
+
+El proyecto nació de una crítica fundamental a las interpretaciones computacionales clásicas del Bardo Thödol. La clasificación de ciertos estados como "ERROR 505" revelaba:
+
+- **Limitación binaria**: Incapacidad de representar la no-dualidad de la vacuidad
+- **Insuficiencia digital**: Los sistemas clásicos no pueden modelar superposiciones cuánticas
+- **Solución cuántica**: Necesidad de qutrits para capturar los tres estados fundamentales
+
+Esta insight llevó al desarrollo del actual framework cuántico-interdisciplinario.
 
 
 👨‍💻 Autor y Contribuciones
