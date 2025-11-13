@@ -345,7 +345,7 @@ Este proyecto PROPONE que:
 
 ## 📜 Licencia
 
-MIT License - Ver `LICENSE` para detalles.
+Este proyecto está bajo licencia MIT - ver archivo [LICENSE](LICENSE) para detalles.
 
 **Nota adicional**: El conocimiento contemplativo del Bardo Thödol pertenece a la tradición Nyingma tibetana. Este proyecto es una interpretación computacional respetuosa que no reemplaza ni pretende ser equivalente a la práctica tradicional.
 
@@ -357,6 +357,37 @@ MIT License - Ver `LICENSE` para detalles.
 - Nāgārjuna por el método Madhyamaka
 - Francisco Varela por neurofenomenología
 - Comunidad QuTiP por herramientas cuánticas
+
+---
+## 📚 Cómo Citar Este Trabajo
+
+Si usas este código o paper en tu investigación, por favor cita:
+
+### Paper
+```bibtex
+@article{hamann2025bardo,
+  title={Simulación Cuántica de los Estados de Conciencia del Bardo Thodol: Un Enfoque Computacional desde la Teoría de Qutrits y Dinámica Kármica},
+  author={Hamann, Horacio Hector},
+  year={2025},
+  journal={Preprint},
+  url={https://github.com/arathorian/BardoTodol},
+  doi={10.5281/zenodo.XXXXXXX}
+}
+```
+
+### Software
+```bibtex
+@software{hamann2025bardosoftware,
+  title={Bardo Thodol Quantum Simulation},
+  author={Hamann, Horacio Hector},
+  year={2025},
+  version={1.0.0},
+  url={https://github.com/arathorian/BardoTodol},
+  doi={10.5281/zenodo.XXXXXXX}
+}
+```
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
 
 ---
 

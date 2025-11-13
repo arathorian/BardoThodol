@@ -1,0 +1,42 @@
+{
+  "title": "Bardo Thodol Quantum Simulation: Computational Modeling of Post-Mortem Consciousness States using Qutrit Systems",
+  "description": "A quantum computational framework for modeling consciousness states described in the Bardo Thodol (Tibetan Book of the Dead) using qutrit systems. This implementation includes epistemological transparency through the Madhyamaka Two Truths method, documenting inherent paradoxes in mathematical modeling of contemplative phenomena.",
+  "creators": [
+    {
+      "name": "Hamann, Horacio Hector",
+      "affiliation": "Independent Researcher",
+    }
+  ],
+  "contributors": [],
+  "keywords": [
+    "quantum computing",
+    "qutrits",
+    "Bardo Thodol",
+    "consciousness",
+    "Buddhist philosophy",
+    "Madhyamaka",
+    "computational modeling",
+    "epistemology",
+    "neuroscience",
+    "contemplative science"
+  ],
+  "license": {
+    "id": "MIT"
+  },
+  "upload_type": "software",
+  "publication_date": "2025-11-13",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/arathorian/BardoTodol",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ],
+  "language": "spa",
+  "notes": "This project applies the Madhyamaka method of Two Truths to computational modeling, explicitly documenting the irreducible paradoxes in mathematical representation of contemplative phenomena. Paper available in Spanish with English abstract.",
+  "communities": [
+    {
+      "identifier": "zenodo"
+    }
+  ]
+}

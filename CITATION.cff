@@ -1,8 +1,27 @@
-@software{Hamann2025BardoQThodol,
-  author = {Horacio Hamann},
-  title = {Simulación Cuántica de Estados Post-Mortem del Bardo Thödol},
-  version = {0.1.0},
-  date = {2025-09-15},
-  DOI = https://doi.org/10.5281/zenodo.8475
-  url = {https://github.com/arathorian/BardoThodol}
-}
+cff-version: 1.2.0
+message: "Si usas este software, por favor cita tanto el repositorio como el paper."
+authors:
+  - family-names: Hamann
+    given-names: Horacio Hector
+    email: horaciohamann@gmail.com
+title: "Bardo Thodol Quantum Simulation"
+version: 1.0.0
+date-released: 2025-11-13
+url: "https://github.com/arathorian/BardoTodol"
+license: MIT
+keywords:
+  - quantum computing
+  - qutrits
+  - Bardo Thodol
+  - consciousness
+  - Buddhist philosophy
+  - epistemology
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Hamann
+      given-names: Horacio Hector
+  title: "Simulación Cuántica de los Estados de Conciencia del Bardo Thodol: Un Enfoque Computacional desde la Teoría de Qutrits y Dinámica Kármica"
+  year: 2025
+  journal: "Preprint"
+  url: "https://github.com/arathorian/BardoTodol"
