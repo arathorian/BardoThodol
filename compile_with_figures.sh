@@ -13,8 +13,8 @@ pdflatex -interaction=nonstopmode main.tex
 pdflatex -interaction=nonstopmode main.tex
 
 # 3. Limpiar
-echo "3. Limpiando archivos temporales..."
-rm -f *.aux *.log *.toc *.out *.lof *.lot *.bbl *.blg *.synctex.gz
+# echo "3. Limpiando archivos temporales..."
+# rm -f *.aux *.log *.toc *.out *.lof *.lot *.bbl *.blg *.synctex.gz
 
 echo "=== COMPILACIÓN EXITOSA ==="
 echo "Documento: main.pdf"

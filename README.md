@@ -13,7 +13,7 @@
 
 Este proyecto establece un puente entre la sabiduría contemplativa tibetana y la computación cuántica moderna, proponiendo que el **Bardo Thödol** (Libro Tibetano de los Muertos) puede ser interpretado como un algoritmo ancestral susceptible de modelado mediante sistemas cuánticos.
 
-> **Marco Metodológico**: Aplicamos el método Madhyamaka de las **Dos Verdades** (saṃvṛti-satya/paramārtha-satya) al modelado computacional, documentando explícitamente las paradojas irresolibles inherentes al proyecto.
+> **Marco Metodológico**: Aplicamos el método Madhyamaka de las **Dos Verdades** (saṃvṛti-satya/paramārtha-satya) al modelado computacional, documentando explícitamente las paradojas irresolubles inherentes al proyecto.
 
 ---
 
@@ -23,10 +23,10 @@ Este modelo es **upāya** (medio hábil), no descripción ontológica:
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│  "Las palabras son como un dedo apuntando a la luna.       │
+│  "Las palabras son como un dedo apuntando a la luna.        │
 │   El dedo no es la luna."                                   │
 │                                    — Laṅkāvatāra Sūtra      │
-│                                                              │
+│                                                             │
 │  Este modelo computacional es el DEDO.                      │
 │  La experiencia directa del Bardo es la LUNA.               │
 └─────────────────────────────────────────────────────────────┘
