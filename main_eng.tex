@@ -14,6 +14,7 @@
 }
 
 \usepackage{graphicx, wrapfig, booktabs, multirow, multicol, xcolor}
+    \graphicspath{{./}{./figures/}}
 \usepackage{geometry, abstract, caption, subcaption}
 \usepackage{listings}
 \usepackage[hyphens]{url}
@@ -26,7 +27,7 @@
     urlcolor=cyan,
     pdftitle={Quantum Simulation of the Bardo Thodol},
     pdfauthor={Horacio Hector Hamann},
-    pdfsubject={Quantum Computation and Buddhist Philosophy},
+    pdfsubject={Quantum Computing and Buddhist Philosophy},
     pdfkeywords={Bardo Thodol, Quantum Computing, Qutrits, Consciousness, Simulation},
     breaklinks=true,
     pdfencoding=auto
@@ -40,7 +41,7 @@
 % Geometry configuration
 \geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
 
-% Page numbering solution
+% Complete solution: fancyhdr + page counter
 \setlength{\headheight}{14.5pt}
 
 % Custom colors
@@ -50,7 +51,8 @@
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{paradoxcolor}{rgb}{0.8,0.4,0}
 
-% Listings configuration
+% Listings Configuration
+
 \lstset{
     language=Python,
     basicstyle=\ttfamily\footnotesize,
@@ -79,14 +81,14 @@
     extendedchars=true
 }
 
-% Header configuration
+% Headers configuration
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small Quantum Simulation of the Bardo Thodol}
 \fancyhead[R]{\small \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 
-% COMMANDS
+% COMMANDS:
 \newcommand{\expected}[1]{\langle #1 \rangle}
 \newcommand{\state}[1]{\ket{\psi_{#1}}}
 \newcommand{\hamiltonian}{\hat{H}}
@@ -97,20 +99,573 @@
 \newcommand{\potentialstate}{\ket{1}}
 
 % Theorems and definitions
-\newtheorem{theorem}{Theorem}
+\newtheorem{teorem}{Theorem}
 \newtheorem{definition}{Definition}
 \newtheorem{corollary}{Corollary}
 \newtheorem{lemma}{Lemma}
 \newtheorem{paradox}{Paradox}[section]
 
-% Epistemological warning environment
+% Environment for epistemological paradoxes
 \newenvironment{epistemic_warning}[1]{
     \begin{center}
     \begin{minipage}{0.9\textwidth}
     \color{paradoxcolor}
     \hrule
     \vspace{0.2cm}
-    \textbf{Level} & \textbf{What it affirms} & \textbf{What it does NOT affirm} \\
+    \textbf{EPISTEMOLOGICAL WARNING: #1}
+    \vspace{0.1cm}
+    \hrule
+    \vspace{0.2cm}
+}{
+    \vspace{0.2cm}
+    \hrule
+    \end{minipage}
+    \end{center}
+}
+
+\title{
+    \textbf{Quantum Simulation of the Bardo Thodol Consciousness States:} \\
+    \large A Computational Approach from Qutrit Theory and Karmic Dynamics \\
+    \normalsize With Epistemological Transparency on Modeling Limits
+}
+
+\author{
+    \textbf{Horacio Hector Hamann} \\
+    \small \href{https://github.com/arathorian/BardoThodol}{https://github.com/arathorian/BardoThodol}
+}
+
+\date{November 2025}
+
+\begin{document}
+
+% Cover page
+\begin{titlepage}
+    \centering
+    \vspace*{1cm}
+
+    {\Huge \textbf{Quantum Simulation of the Bardo Thodol}}
+
+    \vspace{0.5cm}
+    {\Large Modeling Post-Mortem Consciousness States \\ through Qutrit Systems and Karmic Operators}
+
+    \vspace{0.3cm}
+    {\normalsize \textit{With Explicit Epistemological Metamodeling}}
+
+    \vspace{1.5cm}
+
+    \begin{figure}[h]
+        \centering
+        \begin{quantikz}
+            \lstick{$\ket{0}$} & \gate{H} & \ctrl{1} & \gate{R_y(\theta)} & \meter{} \\
+            \lstick{$\ket{2}$} & \gate{S} & \targ{} & \gate{R_z(\phi)} & \meter{} \\
+            \lstick{$\ket{1}$} & \gate{T} & \ctrl{-1} & \gate{H} & \meter{}
+        \end{quantikz}
+        \caption{Quantum circuit representing transitions between Bardo states}
+    \end{figure}
+
+    \vspace{1.5cm}
+
+    {\large \textbf{Horacio Hector Hamann}}
+
+    \vspace{0.3cm}
+    {\small \href{https://github.com/arathorian/BardoThodol}{https://github.com/arathorian/BardoThodol}}
+
+    \vspace{1cm}
+
+    \begin{abstract}
+        \noindent This article presents an innovative theoretical and computational framework for the quantum simulation of consciousness states described in the \emph{Bardo Thodol} (Tibetan Book of the Dead). We propose a model based on qutrit systems (three-level quantum states) where post-mortem states are represented as quantum superpositions, and karmic transitions as temporal evolution operators dependent on attention parameters and karmic accumulations.
+
+        \vspace{0.3cm}
+        \noindent Following the Madhyamaka method of the Two Truths, this work makes explicit the unresolvable paradoxes inherent to mathematical modeling of contemplative phenomena, distinguishing between conventional truth (\emph{saṃvṛti-satya}), ultimate truth (\emph{paramārtha-satya}), and pedagogical use (\emph{upāya}).
+
+        \vspace{0.3cm}
+        \noindent \textbf{Keywords:} Bardo Thodol, Quantum Computing, Qutrits, Consciousness States, Simulation, Sunyata, Karma, Quantum Decoherence, Epistemology of Modeling
+    \end{abstract}
+
+    \vfill
+    {\small Project started in January 2025 · Updated in November 2025}
+\end{titlepage}
+
+\cleardoublepage
+\pagenumbering{roman}
+\setcounter{page}{1}
+
+% Table of Contents
+\tableofcontents
+
+\cleardoublepage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+% Introduction
+\section{Introduction: From Sacred Text to Quantum Algorithm}
+
+\subsection{Interdisciplinary Context}
+
+The \emph{Bardo Thodol}, traditionally interpreted as a ritual guide for post-mortem transition in the Tibetan tradition, is reformulated in this work as an \textbf{ancestral algorithm} that encodes the fundamental dynamics of consciousness states. This reinterpretation is situated at the intersection of:
+
+\begin{itemize}
+    \item \textbf{Mahayana Buddhist Philosophy}: Especially the doctrine of emptiness (sunyata) and buddha-nature
+    \item \textbf{Quantum Computing}: Multi-state systems and coherence-decoherence dynamics
+    \item \textbf{Neurophenomenology}: Scientific study of consciousness states
+    \item \textbf{Information Theory}: Processing and transition of informational states
+    \item \textbf{Critical Epistemology}: Reflective analysis of formal modeling limits
+\end{itemize}
+
+\subsection{Central Hypothesis}
+
+We formulate our fundamental hypothesis as:
+
+\begin{definition}[Bardo Quantum Simulation Hypothesis]
+The Bardo Thodol can be modeled as a multi-state quantum system where:
+\begin{equation}
+\mathcal{H}_{\text{Bardo}} = \alpha\ket{0} + \beta\ket{1} + \gamma\ket{2}
+\end{equation}
+with $\ket{0}$ representing the state of manifest reality (samsara), $\ket{1}$ karmic potential states, and $\ket{2}$ fundamental emptiness (sunyata), where $|\alpha|^2 + |\beta|^2 + |\gamma|^2 = 1$.
+\end{definition}
+
+\begin{epistemic_warning}{Truth Level}
+This mathematical representation belongs to the conventional level (\emph{saṃvṛti-satya}). At the ultimate level (\emph{paramārtha-satya}), śūnyatā is not a measurable vector state but the empty nature of all phenomena, including the very concept of emptiness. The model is \textbf{upāya} (skillful means) pedagogical, not ontological description.
+\end{epistemic_warning}
+
+\subsection{Scientific Justification}
+
+The need for a quantum approach arises from the fundamental limitations of classical computational models:
+
+\begin{itemize}
+    \item \textbf{Dualism Problem}: Binary systems cannot capture the non-dual nature of emptiness
+    \item \textbf{Turing Limitations}: The classical machine cannot represent coherent superpositions
+    \item \textbf{Probabilistic Nature}: The karmic process is intrinsically probabilistic, not deterministic
+\end{itemize}
+
+\subsection{Epistemological Transparency: Modeling Limits}
+
+This work adopts the method of \textbf{Two Truths} (Madhyamaka) applied to computational simulation:
+
+\begin{definition}[Truth Levels in the Model]
+\begin{enumerate}
+    \item \textbf{Conventional Level} (\emph{saṃvṛti-satya}): Quantum mathematics is formally valid in its domain
+    \item \textbf{Ultimate Level} (\emph{paramārtha-satya}): The formalism does not capture śūnyatā as ultimate reality
+    \item \textbf{Pedagogical Use} (\emph{upāya}): The model is heuristic tool for exploration, not identity with the phenomenon
+\end{enumerate}
+\end{definition}
+
+\subsubsection{Documented Unresolvable Paradoxes}
+
+\begin{paradox}[Karmic Quantification]
+\label{paradox:karma}
+Assigning numerical values to karma (e.g., $k_{\text{clarity}}=0.8$, $k_{\text{attachment}}=0.3$) \textbf{reifies} what the Abhidharma describes as impermanent flow (\emph{anitya}) without fixed substance (\emph{anātman}).
+
+\textbf{Irreducible gap:} Karma in Madhyamaka lacks \emph{svabhāva} (inherent nature), being a process of interdependent origination (\emph{pratītyasamutpāda}), not measurable magnitude.
+
+\textbf{Pedagogical value:} The parameters allow exploring how different habitual tendencies affect transitions, without claiming that karma \emph{is} these numbers. Heuristic function, not descriptive.
+\end{paradox}
+
+\begin{paradox}[Reification of Emptiness]
+\label{paradox:sunyata}
+Representing śūnyatā as vector $\ket{2} = [0,0,1]^T$ in Hilbert space contradicts its nature of \emph{niḥsvabhāva} (absence of inherent being).
+
+\textbf{Irreducible gap:} Converting emptiness into separate mathematical state is exactly the type of reification (\emph{saṃjñā}) that Prajñāpāramitā warns to avoid. It is an unresolvable performative contradiction.
+
+\textbf{Pedagogical value:} Demonstrates the need for non-binary frameworks that surpass classical logic. $\ket{2}$ does not \emph{is} emptiness, it \emph{points} towards it as a finger pointing to the moon.
+\end{paradox}
+
+\begin{paradox}[Model Temporality]
+\label{paradox:time}
+The temporal evolution $\unitary(t) = e^{-i\hamiltonian t}$ requires time as continuous parameter, while in deep meditative states (\emph{samādhi}), temporal experience collapses.
+
+\textbf{Irreducible gap:} The mathematical formalism cannot model atemporal experience without structural self-contradiction. \emph{Kāla} (time) is mental construction, not absolute.
+
+\textbf{Pedagogical value:} Shows dynamics of transitions as sequential process useful for conceptual understanding. The user must remember that mathematical time is artifact of the model.
+\end{paradox}
+
+\begin{table}[h]
+\centering
+\caption{Metamodeling: Conventional Truth vs Ultimate Truth}
+\label{tab:two_truths}
+\begin{tabular}{p{3cm}p{5.5cm}p{5.5cm}}
+\toprule
+\textbf{Aspect} & \textbf{Saṃvṛti (Conventional)} & \textbf{Paramārtha (Ultimate)} \\
+\midrule
+Emptiness & Vector $\ket{2} = [0,0,1]^T$ & \emph{Niḥsvabhāva} without substance \\
+Karma & Operator $\karmaop$ with numerical parameters & \emph{Pratītyasamutpāda} non-quantifiable \\
+Time & Parameter $t \in \mathbb{R}$ & Mental construction (\emph{kāla}) \\
+Measurement & Collapse $\ket{\psi} \to \ket{i}$ & \emph{Rigpa} non-dual without observer \\
+Utility & Formally valid & Tool (\emph{upāya}) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% Theoretical Framework
+\section{Theoretical Framework: Quantum and Philosophical Foundations}
+
+\subsection{Qutrit System for Consciousness States}
+
+We define our three-dimensional Hilbert space to model the fundamental states:
+
+\begin{equation}
+\mathcal{H} = \text{span}\{\ket{0}, \ket{1}, \ket{2}\}
+\end{equation}
+
+With the corresponding projection operators:
+
+\begin{equation}
+P_i = \ket{i}\bra{i}, \quad i \in \{0,1,2\}
+\end{equation}
+
+\begin{definition}[Fundamental States - Conventional Level]
+\begin{align*}
+\ket{0} &= \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} \quad \text{(Manifest reality - Samsara)} \\
+\ket{1} &= \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix} \quad \text{(Karmic potential - Latent states)} \\
+\ket{2} &= \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix} \quad \text{(Points towards Sunyata)}
+\end{align*}
+\end{definition}
+
+\begin{epistemic_warning}{Interpretation of Basis States}
+The three basis vectors are NOT ontologically separate realities. At the ultimate level, all states interpenetrate without fixed boundary. The mathematical separation is pedagogical convention for formal analysis.
+\end{epistemic_warning}
+
+\subsection{Karmic Hamiltonian and Evolution Operators}
+
+The evolution operator incorporates karmic and attention parameters:
+
+\begin{equation}
+\hamiltonian_K = \sum_{i\neq j} k_{ij}(\ket{i}\bra{j} + \ket{j}\bra{i}) + \sum_i \epsilon_i \ket{i}\bra{i}
+\end{equation}
+
+where $k_{ij}$ represents the karmic couplings between states (subject to Paradox~\ref{paradox:karma}) and $\epsilon_i$ the intrinsic potentials of each state.
+
+\subsection{The Six Bardos as Quantum Transitions}
+
+We model the six Bardo states as sequences of quantum transitions:
+
+\begin{enumerate}
+    \item \textbf{Bardo of the Moment of Death (Chikhai Bardo)}: $\ket{2} \otimes \ket{k}$
+    \item \textbf{Bardo of Reality (Chonyid Bardo)}: $\sum_k c_k\ket{k}$
+    \item \textbf{Bardo of Becoming (Sidpa Bardo)}: $\ket{0} \leftarrow$ Measurement
+\end{enumerate}
+
+\subsection{Conceptual Genesis: From ERROR 505 to Quantum Qutrit}
+
+The conceptual turning point emerged from the analysis of anthropomorphic digital classifications applied to post-mortem consciousness states. The identification of "ERROR 505" as "Lack of deity recognition" revealed a fundamental limitation in classical computational models.
+
+\subsubsection{Limitation of the Binary Paradigm}
+
+The interpretation as "error" emerged from a binary framework unable to represent:
+\begin{itemize}
+    \item States of non-collapsed quantum superposition
+    \item Emptiness (śūnyatā) as fundamental state
+    \item Non-actualized karmic potentiality
+\end{itemize}
+
+\subsubsection{Transition to Quantum Model}
+
+The resolution required transcending Boolean logic through:
+\begin{equation}
+\mathcal{H}_{\text{Bardo}} = \alpha\ket{0} + \beta\ket{1} + \gamma\ket{2}
+\end{equation}
+where $\ket{2}$ points towards fundamental emptiness, not an error state.
+
+This paradigmatic transition allowed reinterpreting "errors" as windows to states of maximum quantum potentiality where karma can be reprogrammed.
+
+% Methodology
+\section{Methodology: Computational Implementation}
+
+\subsection{Simulation System Architecture}
+
+We implemented the system using Python 3.11 with the following main libraries:
+
+\begin{lstlisting}[caption={Quantum simulation environment configuration}, label={lst:quantum_setup}]
+import numpy as np
+import qutip as qt
+from scipy.linalg import expm
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+import seaborn as sns
+
+class BardoQuantumSystem:
+    """Quantum system with epistemological reflexivity"""
+
+    def __init__(self, karma_params=None):
+        self.karma_params = karma_params or {
+            'clarity': 0.8, 'attachment': 0.3,
+            'compassion': 0.9, 'wisdom': 0.7
+        }
+        self.dim = 3
+        self.operators = self._create_operators()
+        self.current_state = qt.basis(self.dim, 2)
+
+        # Document model limitations
+        self.model_limitations = {
+            'karma_reification':
+                'Numerical parameters reify impermanent flow',
+            'temporal_assumption':
+                'Time t is convention, not ultimate reality',
+            'measurement_duality':
+                'Maintains observer-observed framework'
+        }
+
+    def _create_operators(self):
+        """Creates fundamental quantum operators"""
+        # Basis states
+        kets = [qt.basis(3, i) for i in range(3)]
+
+        # Projectors P0, P1, P2
+        P = {f'P{i}': kets[i] * kets[i].dag() for i in range(3)}
+
+        # Transition operators
+        S01 = kets[0] * kets[1].dag()
+        S12 = kets[1] * kets[2].dag()
+        S20 = kets[2] * kets[0].dag()
+
+        # Base Hamiltonian
+        H0 = 0.1*P['P0'] + 0.2*P['P1'] + 0.3*P['P2']
+
+        # Karmic operator (subject to Paradox 1)
+        K = (self.karma_params['attachment'] * (S01 + S01.dag()) +
+             self.karma_params['clarity'] * (S12 + S12.dag()) +
+             self.karma_params['compassion'] * (S20 + S20.dag()))
+
+        P.update({'S01': S01, 'S12': S12, 'S20': S20, 'H0': H0, 'K': K})
+        return P
+\end{lstlisting}
+
+\subsection{Temporal Evolution Algorithm}
+
+The main algorithm simulates the complete evolution through the Bardo states:
+
+\begin{lstlisting}[caption={Bardo evolution algorithm}, label={lst:bardo_evolution}]
+def simulate_bardo_transition(self, time_steps=1000,
+                            attention_function='logistic'):
+    """Simulates transition with documentation of assumptions"""
+
+    times = np.linspace(0, 4*np.pi, time_steps)
+    results = {
+        'probabilities': [],
+        'coherence': [],
+        'purity': [],
+        'states': [],
+        'epistemic_notes': []
+    }
+
+    current_state = self.current_state
+
+    for t in times:
+        # Attention factor (temporal convention)
+        attention = self._attention_evolution(t, attention_function)
+
+        # Effective Hamiltonian
+        H_eff = self.operators['H0'] + attention * self.operators['K']
+
+        # Incremental unitary evolution
+        dt = times[1] - times[0] if len(times) > 1 else 0.01
+        U = (-1j * dt * H_eff).expm()
+        evolved_state = U * current_state
+        current_state = evolved_state
+
+        # Calculate probabilities using projectors
+        probs = [qt.expect(self.operators[f'P{i}'], evolved_state)
+                for i in range(self.dim)]
+
+        coherence = self._calculate_coherence(evolved_state)
+        purity = self._calculate_purity(evolved_state)
+
+        results['probabilities'].append(probs)
+        results['coherence'].append(coherence)
+        results['purity'].append(purity)
+        results['states'].append(evolved_state)
+
+        # Epistemological note every 100 steps
+        if len(results['states']) % 100 == 0:
+            note = self._generate_epistemic_note(evolved_state, t)
+            results['epistemic_notes'].append(note)
+
+        current_state = evolved_state
+
+    return results, times
+
+def _generate_epistemic_note(self, state, time):
+    """Generates note about model limits at this point"""
+    probs = [qt.expect(self.operators[f'P{i}'], state)
+             for i in range(3)]
+    dominant = np.argmax(probs)
+
+    notes = {
+        0: f"t={time:.2f}: High P(|0>) indicates manifestation, "
+           f"but form is empty",
+        1: f"t={time:.2f}: High P(|1>) indicates potential, "
+           f"not substantial karma",
+        2: f"t={time:.2f}: High P(|2>) points to sunyata, "
+           f"does not describe it"
+    }
+    return notes[dominant]
+\end{lstlisting}
+
+% Results
+\section{Results and Simulations}
+
+\subsection{Temporal Evolution of Probabilities}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{figures/state_evolution.pdf}
+    \caption{
+        Temporal evolution of probabilities and quantum metrics in the Bardo system (Conventional Level).
+        (A) Probabilities of fundamental states: Samsara ($\ket{0}$), Karmic Potential ($\ket{1}$) and pointer to Emptiness ($\ket{2}$).
+        (B) Evolution of quantum coherence and state purity, showing periods of coherent superposition and decoherence.
+        \textbf{Epistemological note:} These trajectories are formally valid but do not describe direct contemplative experience.
+    }
+    \label{fig:state_evolution}
+\end{figure}
+
+\subsection{Quantum Coherence Analysis}
+
+Quantum coherence is maintained during transitions between Bardos, with characteristic patterns:
+
+\begin{equation}
+C(\rho) = \sum_{i\neq j} |\rho_{ij}|
+\end{equation}
+
+\begin{epistemic_warning}{Interpretation of Coherence}
+Mathematical quantum coherence is ANALOGOUS (not identical) to phenomenological "non-dual interpenetration". The number $C(\rho)$ does not directly measure contemplative clarity (\emph{prajñā}), but points towards it as formal correlate.
+\end{epistemic_warning}
+
+\begin{table}[h]
+\centering
+\caption{Coherence metrics by Bardo state (Conventional Level)}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Bardo State} & \textbf{Coherence} & \textbf{Purity} & \textbf{Entropy} \\
+\midrule
+Chikhai Bardo & 0.95 $\pm$ 0.02 & 0.98 $\pm$ 0.01 & 0.12 $\pm$ 0.03 \\
+Chonyid Bardo & 0.87 $\pm$ 0.04 & 0.92 $\pm$ 0.03 & 0.28 $\pm$ 0.05 \\
+Sidpa Bardo & 0.45 $\pm$ 0.07 & 0.78 $\pm$ 0.06 & 0.65 $\pm$ 0.08 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Visualization of Karmic Transitions}
+
+\begin{lstlisting}[caption={Generation of scientific visualizations}, label={lst:visualization}]
+def create_comprehensive_visualization(results, times):
+    """Creates visualizations with epistemological notes"""
+
+    fig = plt.figure(figsize=(20, 12))
+
+    # 1. Probability evolution
+    ax1 = fig.add_subplot(2, 3, 1)
+    probabilities = np.array(results['probabilities'])
+    ax1.plot(times, probabilities[:, 0],
+             label='$|0\\rangle$ Samsara', linewidth=2)
+    ax1.plot(times, probabilities[:, 1],
+             label='$|1\\rangle$ Karmic', linewidth=2)
+    ax1.plot(times, probabilities[:, 2],
+             label='$|2\\rangle$ Emptiness', linewidth=2)
+    ax1.set_xlabel('Time')
+    ax1.set_ylabel('Probability')
+    ax1.legend()
+    ax1.grid(True, alpha=0.3)
+
+    # 2. Quantum coherence
+    ax2 = fig.add_subplot(2, 3, 2)
+    ax2.plot(times, results['coherence'],
+             color='purple', linewidth=2)
+    ax2.set_xlabel('Time')
+    ax2.set_ylabel('Quantum Coherence')
+    ax2.grid(True, alpha=0.3)
+
+    # 3. 3D Bloch sphere
+    ax3 = fig.add_subplot(2, 3, 3, projection='3d')
+    self._plot_bloch_sphere(results['states'], ax3)
+
+    # Add epistemological note
+    fig.text(0.5, 0.02,
+             'Conventional Level: Formally valid metrics',
+             ha='center', fontsize=10, style='italic', color='red')
+
+    plt.tight_layout()
+    return fig
+\end{lstlisting}
+
+% Discussion
+\section{Discussion: Interdisciplinary Implications}
+
+\subsection{Validation of Central Hypothesis}
+
+Our results demonstrate that (at the conventional level):
+
+\begin{enumerate}
+    \item The qutrit model can effectively represent the non-duality of emptiness \textit{as logical structure}
+    \item Transitions between Bardo states follow coherent quantum dynamics \textit{as formal analogy}
+    \item The metaphorical "ERROR 505" corresponds mathematically to non-collapsed superposition states \textit{pointing towards potentiality}
+\end{enumerate}
+
+\begin{epistemic_warning}{Validation Scope}
+The "validation" is internal to the mathematical model. We do not claim that the Bardo Thodol "is" a quantum algorithm, but that quantum formalism can be used as \emph{upāya} to explore its logical structure. The contemplative post-mortem experience remains outside the model's scope.
+\end{epistemic_warning}
+
+\subsection{Comparison with Classical Models}
+
+\begin{table}[h]
+\centering
+\caption{Comparison between classical and quantum models}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Characteristic} & \textbf{Classical Model} & \textbf{Quantum Model} \\
+\midrule
+Emptiness representation & ERROR 505 & Pointer state $\ket{2}$ \\
+Superposed states & Not possible & Fundamental \\
+Probabilistic nature & Simulated & Intrinsic \\
+Non-local transitions & No & Yes (analogically) \\
+Temporal coherence & No & Yes \\
+\textbf{Documented paradoxes} & \textbf{Ignored} & \textbf{Explicitated} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Implications for Consciousness Science}
+
+Our work suggests (as exploratory hypothesis, not ontological claim):
+
+\begin{itemize}
+    \item Consciousness states could follow quantum dynamics \textit{in certain structural aspects}
+    \item Deep meditation could affect quantum coherence parameters \textit{measurable neurophysiologically}
+    \item Computational models of consciousness should consider quantum frameworks \textit{along with explicit limitation statements}
+\end{itemize}
+
+\subsection{Recognized Project Limitations}
+
+\begin{enumerate}
+    \item \textbf{Phenomenological gap}: The model does not capture direct experience (\emph{pratyakṣa}) of bardo states
+    \item \textbf{Parametric reductionism}: Quantified karma contradicts its nature as interdependent process
+    \item \textbf{Artificial temporality}: Mathematical time does not reflect atemporality of \emph{samādhi}
+    \item \textbf{Observational dualism}: Maintains measurer-measured separation absent in \emph{rigpa}
+    \item \textbf{Reification of emptiness}: $\ket{2}$ as vector contradicts \emph{niḥsvabhāva}
+\end{enumerate}
+
+These limitations are not "problems to solve" but inherent characteristics of mathematical modeling of contemplative phenomena.
+
+% Conclusion
+\section{Conclusion and Future Work}
+
+\subsection{Main Conclusions}
+
+\begin{enumerate}
+    \item We have demonstrated the feasibility of \textit{structurally} modeling Bardo Thodol consciousness states using quantum systems
+    \item The qutrit approach overcomes limitations of binary models \textit{at the level of formal logic}
+    \item Emptiness (sunyata) finds natural mathematical representation in quantum superpositions \textit{as analogy, not identity}
+    \item Karmic dynamics can be implemented as quantum operators \textit{with explicit recognition of reification}
+    \item \textbf{The explication of unresolvable paradoxes} turns the project into reflexive metamodel
+\end{enumerate}
+
+\subsection{Methodological Framework: The Three Truths Applied}
+
+\begin{table}[h]
+\centering
+\caption{Application of the Two Truths method to modeling}
+\begin{tabular}{p{3.5cm}p{5.5cm}p{5cm}}
+\toprule
+\textbf{Level} & \textbf{What it affirms} & \textbf{What it does NOT affirm} \\
 \midrule
 \textbf{Conventional} (\emph{saṃvṛti}) & Quantum mathematics formally valid & That they describe ultimate reality \\
 \textbf{Ultimate} (\emph{paramārtha}) & Phenomena lack inherent nature & That mathematics are useless \\
@@ -122,11 +677,11 @@
 \subsection{Future Directions}
 
 \begin{itemize}
-    \item \textbf{Experimental Validation}: Integration with advanced meditation and EEG data, \textit{with warning that neural correlates are not experience}
-    \item \textbf{Quantum Hardware}: Implementation on real quantum processors (IBM Q, Rigetti), \textit{as computational feasibility demonstration}
-    \item \textbf{Extended Models}: Generalization to higher-dimensional systems, \textit{maintaining epistemological transparency}
-    \item \textbf{Clinical Applications}: Potential applications in therapy and altered consciousness states, \textit{without psychologistic reductionism}
-    \item \textbf{Contemplative-scientific dialogue}: Validation with advanced practitioners on model's heuristic utility
+    \item \textbf{Experimental Validation}: Integration with advanced meditation data and EEG, \textit{with warning that neural correlates are not the experience}
+    \item \textbf{Quantum Hardware}: Implementation in real quantum processors (IBM Q, Rigetti), \textit{as demonstration of computational feasibility}
+    \item \textbf{Extended Models}: Generalization to multi-state systems and dimensions, \textit{maintaining epistemological transparency}
+    \item \textbf{Clinical Applications}: Potential applications in therapy and altered states of consciousness, \textit{without psychological reductionism}
+    \item \textbf{Contemplative-scientific dialogue}: Validation with advanced practitioners about heuristic utility of the model
 \end{itemize}
 
 \subsection{Scientific and Philosophical Impact}
@@ -137,18 +692,18 @@ This work establishes a bridge between ancestral contemplative wisdom and modern
     \item Philosophy of mind and cognitive science \textit{with non-reductionist epistemology}
     \item Quantum computing and information theory \textit{applied to phenomenology}
     \item Contemplative studies and neurophenomenology \textit{with respect to experiential irreducibility}
-    \item \textbf{Reflexive meta-modeling}: Models incorporating self-criticism
+    \item \textbf{Reflexive metamodeling}: Models that incorporate self-criticism
 \end{itemize}
 
 \subsection{Final Reflection: The Finger and the Moon}
 
-As taught in the \emph{Laṅkāvatāra Sūtra}:
+As taught by the \emph{Laṅkāvatāra Sūtra}:
 
 \begin{quote}
-\textit{"Words and teachings are like a finger pointing at the moon. The finger can indicate where the moon is, but the finger is not the moon. To see the moon, one must look beyond the finger."}
+\textit{"Words and teachings are like a finger pointing to the moon. The finger can indicate where the moon is, but the finger is not the moon. To see the moon, it is necessary to look beyond the finger."}
 \end{quote}
 
-This computational model is the finger. Direct experience of Bardo states is the moon. Not confusing one with the other is the wisdom enabling effective model use.
+This computational model is the finger. The direct experience of Bardo states is the moon. Not confusing one with the other is the wisdom that allows using the model effectively.
 
 % Appendices
 \begin{appendices}
@@ -205,7 +760,7 @@ class QuantumAnalytics:
 
     @staticmethod
     def analyze_transitions(probabilities, threshold=0.1):
-        """Unified analysis of state transitions"""
+        """Unified analysis of transitions between states"""
         probs = np.array(probabilities)
         transitions = []
 
@@ -246,8 +801,8 @@ class QuantumAnalytics:
 
 class BardoQuantumSystem:
     """
-    Complete quantum simulation system for Bardo Thodol
-    WITH EXPLICIT LIMITATION DOCUMENTATION
+    Complete quantum simulation system of Bardo Thodol
+    WITH EXPLICIT DOCUMENTATION OF LIMITATIONS
     """
 
     def __init__(self, **parameters):
@@ -269,7 +824,7 @@ class BardoQuantumSystem:
         }
 
     def set_parameters(self, params):
-        """Configure system parameters"""
+        """Configures system parameters"""
         self.karma_params = params.get('karma_params', {
             'clarity': 0.8,
             'attachment': 0.3,
@@ -282,7 +837,7 @@ class BardoQuantumSystem:
         })
 
     def initialize_quantum_system(self):
-        """Initialize base quantum system"""
+        """Initializes base quantum system"""
         self.dimension = 3
         self.states = {
             'samsara': qt.basis(3, 0),
@@ -293,7 +848,7 @@ class BardoQuantumSystem:
         self.current_state = self.states['void']
 
     def _create_operators(self):
-        """Create quantum operators for system"""
+        """Creates quantum operators for the system"""
         # Projection operators
         P0 = qt.basis(3, 0) * qt.basis(3, 0).dag()
         P1 = qt.basis(3, 1) * qt.basis(3, 1).dag()
@@ -320,7 +875,7 @@ class BardoQuantumSystem:
 
     def simulate_bardo_transition(self, time_steps=1000,
                                   attention_function='logistic'):
-        """Simulate complete transition"""
+        """Simulates complete transition"""
         times = np.linspace(0, self.time_parameters['total_time'],
                           time_steps)
         results = {
@@ -362,7 +917,7 @@ class BardoQuantumSystem:
             return 1.0
 
     def run_complete_simulation(self):
-        """Execute complete simulation with analysis"""
+        """Runs complete simulation with analysis"""
         results, times = self.simulate_bardo_transition()
         probs_array = np.array(results['probabilities'])
 
@@ -386,7 +941,7 @@ class BardoQuantumSystem:
         return results, times, analysis_report
 
     def _classify_final_state(self, state):
-        """Classify final state by probabilities"""
+        """Classifies final state according to probabilities"""
         probs = [float(qt.expect(self.operators[f'P{i}'], state))
                 for i in range(3)]
         max_prob_index = np.argmax(probs)
@@ -413,514 +968,4 @@ class BardoQuantumSystem:
 \bibitem{epistemology1} Varela, F. J., Thompson, E., \& Rosch, E. (2016). \emph{The Embodied Mind: Cognitive Science and Human Experience}. MIT Press.
 \end{thebibliography}
 
-\end{document}{EPISTEMOLOGICAL WARNING: #1}
-    \vspace{0.1cm}
-    \hrule
-    \vspace{0.2cm}
-}{
-    \vspace{0.2cm}
-    \hrule
-    \end{minipage}
-    \end{center}
-}
-
-\title{
-    \textbf{Quantum Simulation of Consciousness States in the Bardo Thodol:} \\
-    \large A Computational Approach via Qutrit Theory and Karmic Dynamics \\
-    \normalsize With Epistemological Transparency on Modeling Limits
-}
-
-\author{
-    \textbf{Horacio Hector Hamann} \\
-    \small \href{https://github.com/arathorian/BardoThodol}{https://github.com/arathorian/BardoThodol}
-}
-
-\date{November 2025}
-
-\begin{document}
-
-% Enhanced title page
-\begin{titlepage}
-    \centering
-    \vspace*{1cm}
-
-    {\Huge \textbf{Quantum Simulation of the Bardo Thodol}}
-
-    \vspace{0.5cm}
-    {\Large Modeling Post-Mortem Consciousness States \\ via Qutrit Systems and Karmic Operators}
-
-    \vspace{0.3cm}
-    {\normalsize \textit{With Explicit Epistemological Meta-Modeling}}
-
-    \vspace{1.5cm}
-
-    \begin{figure}[h]
-        \centering
-        \begin{quantikz}
-            \lstick{$\ket{0}$} & \gate{H} & \ctrl{1} & \gate{R_y(\theta)} & \meter{} \\
-            \lstick{$\ket{2}$} & \gate{S} & \targ{} & \gate{R_z(\phi)} & \meter{} \\
-            \lstick{$\ket{1}$} & \gate{T} & \ctrl{-1} & \gate{H} & \meter{}
-        \end{quantikz}
-        \caption{Quantum circuit representing transitions between Bardo states}
-    \end{figure}
-
-    \vspace{1.5cm}
-
-    {\large \textbf{Horacio Hector Hamann}}
-
-    \vspace{0.3cm}
-    {\small \href{https://github.com/arathorian/BardoThodol}{https://github.com/arathorian/BardoThodol}}
-
-    \vspace{1cm}
-
-    \begin{abstract}
-        \noindent This article presents an innovative theoretical and computational framework for quantum simulation of consciousness states described in the \emph{Bardo Thodol} (Tibetan Book of the Dead). We propose a qutrit-based model (three-level quantum states) where post-mortem states are represented as quantum superpositions, and karmic transitions as time-evolution operators dependent on attention and karmic accumulation parameters.
-
-        \vspace{0.3cm}
-        \noindent Following the Madhyamaka method of Two Truths, this work explicates inherent irreducible paradoxes in mathematical modeling of contemplative phenomena, distinguishing between conventional truth (\emph{saṃvṛti-satya}), ultimate truth (\emph{paramārtha-satya}), and pedagogical use (\emph{upāya}).
-
-        \vspace{0.3cm}
-        \noindent \textbf{Keywords:} Bardo Thodol, Quantum Computing, Qutrits, Consciousness States, Simulation, Sunyata, Karma, Quantum Decoherence, Modeling Epistemology
-    \end{abstract}
-
-    \vfill
-    {\small Project initiated January 2025 · Updated November 2025}
-\end{titlepage}
-
-\cleardoublepage
-\pagenumbering{roman}
-\setcounter{page}{1}
-
-% Table of contents
-\tableofcontents
-
-\cleardoublepage
-\pagenumbering{arabic}
-\setcounter{page}{1}
-
-% Introduction
-\section{Introduction: From Sacred Text to Quantum Algorithm}
-
-\subsection{Interdisciplinary Context}
-
-The \emph{Bardo Thodol}, traditionally interpreted as a ritual guide for post-mortem transition in Tibetan tradition, is reformulated in this work as an \textbf{ancestral algorithm} encoding fundamental consciousness state dynamics. This reinterpretation sits at the intersection of:
-
-\begin{itemize}
-    \item \textbf{Mahayana Buddhist Philosophy}: Especially the doctrine of emptiness (sunyata) and buddha-nature
-    \item \textbf{Quantum Computing}: Multi-state systems and coherence-decoherence dynamics
-    \item \textbf{Neurophenomenology}: Scientific study of consciousness states
-    \item \textbf{Information Theory}: Processing and transition of informational states
-    \item \textbf{Critical Epistemology}: Reflexive analysis of formal modeling limits
-\end{itemize}
-
-\subsection{Central Hypothesis}
-
-We formulate our fundamental hypothesis as:
-
-\begin{definition}[Bardo Quantum Simulation Hypothesis]
-The Bardo Thodol can be modeled as a multi-state quantum system where:
-\begin{equation}
-\mathcal{H}_{\text{Bardo}} = \alpha\ket{0} + \beta\ket{1} + \gamma\ket{2}
-\end{equation}
-with $\ket{0}$ representing manifest reality state (samsara), $\ket{1}$ karmic potential states, and $\ket{2}$ fundamental emptiness (sunyata), where $|\alpha|^2 + |\beta|^2 + |\gamma|^2 = 1$.
-\end{definition}
-
-\begin{epistemic_warning}{Truth Level}
-This mathematical representation belongs to the conventional level (\emph{saṃvṛti-satya}). At the ultimate level (\emph{paramārtha-satya}), śūnyatā is not a measurable vector state but the empty nature of all phenomena, including the concept of emptiness itself. The model is pedagogical \textbf{upāya} (skillful means), not ontological description.
-\end{epistemic_warning}
-
-\subsection{Scientific Justification}
-
-The need for a quantum approach arises from fundamental limitations of classical computational models:
-
-\begin{itemize}
-    \item \textbf{Dualism Problem}: Binary systems cannot capture emptiness's non-dual nature
-    \item \textbf{Turing Limitations}: Classical machines cannot represent coherent superpositions
-    \item \textbf{Probabilistic Nature}: Karmic process is intrinsically probabilistic, not deterministic
-\end{itemize}
-
-\subsection{Epistemological Transparency: Modeling Limits}
-
-This work adopts the \textbf{Two Truths} method (Madhyamaka) applied to computational simulation:
-
-\begin{definition}[Truth Levels in the Model]
-\begin{enumerate}
-    \item \textbf{Conventional Level} (\emph{saṃvṛti-satya}): Quantum mathematics are formally valid in their domain
-    \item \textbf{Ultimate Level} (\emph{paramārtha-satya}): Formalism does not capture śūnyatā as ultimate reality
-    \item \textbf{Pedagogical Use} (\emph{upāya}): Model is heuristic tool for exploration, not identity with phenomenon
-\end{enumerate}
-\end{definition}
-
-\subsubsection{Documented Irreducible Paradoxes}
-
-\begin{paradox}[Karmic Quantification]
-\label{paradox:karma}
-Assigning numerical values to karma (e.g., $k_{\text{clarity}}=0.8$, $k_{\text{attachment}}=0.3$) \textbf{reifies} what Abhidharma describes as impermanent flux (\emph{anitya}) without fixed substance (\emph{anātman}).
-
-\textbf{Irreducible gap:} Karma in Madhyamaka lacks \emph{svabhāva} (inherent nature), being a process of interdependent origination (\emph{pratītyasamutpāda}), not measurable magnitude.
-
-\textbf{Pedagogical value:} Parameters allow exploring how different habitual tendencies affect transitions, without affirming karma \emph{is} these numbers. Heuristic function, not descriptive.
-\end{paradox}
-
-\begin{paradox}[Emptiness Reification]
-\label{paradox:sunyata}
-Representing śūnyatā as vector $\ket{2} = [0,0,1]^T$ in Hilbert space contradicts its nature as \emph{niḥsvabhāva} (absence of inherent being).
-
-\textbf{Irreducible gap:} Converting emptiness into a separate mathematical state is exactly the type of reification (\emph{saṃjñā}) that Prajñāpāramitā warns against. It is irreducible performative contradiction.
-
-\textbf{Pedagogical value:} Demonstrates need for non-binary frameworks transcending classical logic. $\ket{2}$ does not \emph{is} emptiness, it \emph{points toward} it like finger pointing at moon.
-\end{paradox}
-
-\begin{paradox}[Model Temporality]
-\label{paradox:time}
-Temporal evolution $\unitary(t) = e^{-i\hamiltonian t}$ requires time as continuous parameter, while in deep meditative states (\emph{samādhi}), temporal experience collapses.
-
-\textbf{Irreducible gap:} Mathematical formalism cannot model atemporal experience without structural self-contradiction. \emph{Kāla} (time) is mental construction, not absolute.
-
-\textbf{Pedagogical value:} Shows transition dynamics as sequential process useful for conceptual understanding. User must remember mathematical time is model artifact.
-\end{paradox}
-
-\begin{table}[h]
-\centering
-\caption{Meta-modeling: Conventional Truth vs Ultimate Truth}
-\label{tab:two_truths}
-\begin{tabular}{p{3cm}p{5.5cm}p{5.5cm}}
-\toprule
-\textbf{Aspect} & \textbf{Saṃvṛti (Conventional)} & \textbf{Paramārtha (Ultimate)} \\
-\midrule
-Emptiness & Vector $\ket{2} = [0,0,1]^T$ & \emph{Niḥsvabhāva} without substance \\
-Karma & Operator $\karmaop$ with numerical parameters & \emph{Pratītyasamutpāda} non-quantifiable \\
-Time & Parameter $t \in \mathbb{R}$ & Mental construction (\emph{kāla}) \\
-Measurement & Collapse $\ket{\psi} \to \ket{i}$ & Non-dual \emph{rigpa} without observer \\
-Utility & Formally valid & Tool (\emph{upāya}) \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-% Theoretical Framework
-\section{Theoretical Framework: Quantum and Philosophical Foundations}
-
-\subsection{Qutrit System for Consciousness States}
-
-We define our three-dimensional Hilbert space to model fundamental states:
-
-\begin{equation}
-\mathcal{H} = \text{span}\{\ket{0}, \ket{1}, \ket{2}\}
-\end{equation}
-
-With corresponding projection operators:
-
-\begin{equation}
-P_i = \ket{i}\bra{i}, \quad i \in \{0,1,2\}
-\end{equation}
-
-\begin{definition}[Fundamental States - Conventional Level]
-\begin{align*}
-\ket{0} &= \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} \quad \text{(Manifest reality - Samsara)} \\
-\ket{1} &= \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix} \quad \text{(Karmic potential - Latent states)} \\
-\ket{2} &= \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix} \quad \text{(Points toward Sunyata)}
-\end{align*}
-\end{definition}
-
-\begin{epistemic_warning}{Base State Interpretation}
-The three basis vectors are NOT ontologically separate realities. At the ultimate level, all states interpenetrate without fixed boundary. Mathematical separation is pedagogical convention for formal analysis.
-\end{epistemic_warning}
-
-\subsection{Karmic Hamiltonian and Evolution Operators}
-
-The evolution operator incorporates karmic and attention parameters:
-
-\begin{equation}
-\hamiltonian_K = \sum_{i\neq j} k_{ij}(\ket{i}\bra{j} + \ket{j}\bra{i}) + \sum_i \epsilon_i \ket{i}\bra{i}
-\end{equation}
-
-where $k_{ij}$ represents karmic couplings between states (subject to Paradox~\ref{paradox:karma}) and $\epsilon_i$ intrinsic potentials of each state.
-
-\subsection{Six Bardos as Quantum Transitions}
-
-We model the six Bardo states as quantum transition sequences:
-
-\begin{enumerate}
-    \item \textbf{Moment of Death Bardo (Chikhai Bardo)}: $\ket{2} \otimes \ket{k}$
-    \item \textbf{Reality Bardo (Chonyid Bardo)}: $\sum_k c_k\ket{k}$
-    \item \textbf{Becoming Bardo (Sidpa Bardo)}: $\ket{0} \leftarrow$ Measurement
-\end{enumerate}
-
-\subsection{Conceptual Genesis: From ERROR 505 to Quantum Qutrit}
-
-The conceptual turning point arose from analyzing anthropomorphic digital classifications applied to post-mortem consciousness states. Identifying "ERROR 505" as "Deity recognition failure" revealed fundamental limitation in classical computational models.
-
-\subsubsection{Binary Paradigm Limitation}
-
-Interpretation as "error" emerged from binary framework unable to represent:
-\begin{itemize}
-    \item Uncollapsed quantum superposition states
-    \item Emptiness (śūnyatā) as fundamental state
-    \item Non-actualized karmic potentiality
-\end{itemize}
-
-\subsubsection{Transition to Quantum Model}
-
-Resolution required transcending Boolean logic via:
-\begin{equation}
-\mathcal{H}_{\text{Bardo}} = \alpha\ket{0} + \beta\ket{1} + \gamma\ket{2}
-\end{equation}
-where $\ket{2}$ points toward fundamental emptiness, not error state.
-
-This paradigmatic transition enabled reinterpreting "errors" as windows to maximum quantum potentiality states where karma can be reprogrammed.
-
-% Methodology
-\section{Methodology: Computational Implementation}
-
-\subsection{Simulation System Architecture}
-
-We implement the system using Python 3.11 with the following main libraries:
-
-\begin{lstlisting}[caption={Quantum simulation environment configuration}, label={lst:quantum_setup}]
-import numpy as np
-import qutip as qt
-from scipy.linalg import expm
-import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
-import seaborn as sns
-
-class BardoQuantumSystem:
-    """Quantum system with epistemological reflexivity"""
-
-    def __init__(self, karma_params=None):
-        self.karma_params = karma_params or {
-            'clarity': 0.8, 'attachment': 0.3,
-            'compassion': 0.9, 'wisdom': 0.7
-        }
-        self.dim = 3
-        self.operators = self._create_operators()
-        self.current_state = qt.basis(self.dim, 2)
-
-        # Document model limitations
-        self.model_limitations = {
-            'karma_reification':
-                'Numerical parameters reify impermanent flux',
-            'temporal_assumption':
-                'Time t is convention, not ultimate reality',
-            'measurement_duality':
-                'Maintains observer-observed framework'
-        }
-
-    def _create_operators(self):
-        """Creates fundamental quantum operators"""
-        # Basis states
-        kets = [qt.basis(3, i) for i in range(3)]
-
-        # Projectors P0, P1, P2
-        P = {f'P{i}': kets[i] * kets[i].dag() for i in range(3)}
-
-        # Transition operators
-        S01 = kets[0] * kets[1].dag()
-        S12 = kets[1] * kets[2].dag()
-        S20 = kets[2] * kets[0].dag()
-
-        # Base Hamiltonian
-        H0 = 0.1*P['P0'] + 0.2*P['P1'] + 0.3*P['P2']
-
-        # Karmic operator (subject to Paradox 1)
-        K = (self.karma_params['attachment'] * (S01 + S01.dag()) +
-             self.karma_params['clarity'] * (S12 + S12.dag()) +
-             self.karma_params['compassion'] * (S20 + S20.dag()))
-
-        P.update({'S01': S01, 'S12': S12, 'S20': S20, 'H0': H0, 'K': K})
-        return P
-\end{lstlisting}
-
-\subsection{Time Evolution Algorithm}
-
-The main algorithm simulates complete evolution through Bardo states:
-
-\begin{lstlisting}[caption={Bardo evolution algorithm}, label={lst:bardo_evolution}]
-def simulate_bardo_transition(self, time_steps=1000,
-                            attention_function='logistic'):
-    """Simulates transition with assumption documentation"""
-
-    times = np.linspace(0, 4*np.pi, time_steps)
-    results = {
-        'probabilities': [],
-        'coherence': [],
-        'purity': [],
-        'states': [],
-        'epistemic_notes': []
-    }
-
-    current_state = self.current_state
-
-    for t in times:
-        # Attention factor (temporal convention)
-        attention = self._attention_evolution(t, attention_function)
-
-        # Effective Hamiltonian
-        H_eff = self.operators['H0'] + attention * self.operators['K']
-
-        # Incremental unitary evolution
-        dt = times[1] - times[0] if len(times) > 1 else 0.01
-        U = (-1j * dt * H_eff).expm()
-        evolved_state = U * current_state
-        current_state = evolved_state
-
-        # Calculate probabilities using projectors
-        probs = [qt.expect(self.operators[f'P{i}'], evolved_state)
-                for i in range(self.dim)]
-
-        coherence = self._calculate_coherence(evolved_state)
-        purity = self._calculate_purity(evolved_state)
-
-        results['probabilities'].append(probs)
-        results['coherence'].append(coherence)
-        results['purity'].append(purity)
-        results['states'].append(evolved_state)
-
-        # Epistemological note every 100 steps
-        if len(results['states']) % 100 == 0:
-            note = self._generate_epistemic_note(evolved_state, t)
-            results['epistemic_notes'].append(note)
-
-        current_state = evolved_state
-
-    return results, times
-
-def _generate_epistemic_note(self, state, time):
-    """Generates note on model limits at this point"""
-    probs = [qt.expect(self.operators[f'P{i}'], state)
-             for i in range(3)]
-    dominant = np.argmax(probs)
-
-    notes = {
-        0: f"t={time:.2f}: High P(|0>) signals manifestation, "
-           f"but form is empty",
-        1: f"t={time:.2f}: High P(|1>) indicates potential, "
-           f"not substantial karma",
-        2: f"t={time:.2f}: High P(|2>) points to sunyata, "
-           f"does not describe it"
-    }
-    return notes[dominant]
-\end{lstlisting}
-
-% Results
-\section{Results and Simulations}
-
-\subsection{Temporal Probability Evolution}
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.9\textwidth]{figures/state_evolution.pdf}
-    \caption{
-        Temporal evolution of probabilities and quantum metrics in Bardo system (Conventional Level).
-        (A) Fundamental state probabilities: Samsara ($\ket{0}$), Karmic Potential ($\ket{1}$) and Emptiness pointer ($\ket{2}$).
-        (B) Quantum coherence and state purity evolution, showing periods of coherent superposition and decoherence.
-        \textbf{Epistemological note:} These trajectories are formally valid but do not describe direct contemplative experience.
-    }
-    \label{fig:state_evolution}
-\end{figure}
-
-\subsection{Quantum Coherence Analysis}
-
-Quantum coherence is maintained during Bardo transitions, with characteristic patterns:
-
-\begin{equation}
-C(\rho) = \sum_{i\neq j} |\rho_{ij}|
-\end{equation}
-
-\begin{epistemic_warning}{Coherence Interpretation}
-Mathematical quantum coherence is ANALOGOUS (not identical) to phenomenological "non-dual interpenetration". Number $C(\rho)$ does not directly measure contemplative clarity (\emph{prajñā}), but points toward it as formal correlate.
-\end{epistemic_warning}
-
-\begin{table}[h]
-\centering
-\caption{Coherence metrics by Bardo state (Conventional Level)}
-\begin{tabular}{lccc}
-\toprule
-\textbf{Bardo State} & \textbf{Coherence} & \textbf{Purity} & \textbf{Entropy} \\
-\midrule
-Chikhai Bardo & 0.95 $\pm$ 0.02 & 0.98 $\pm$ 0.01 & 0.12 $\pm$ 0.03 \\
-Chonyid Bardo & 0.87 $\pm$ 0.04 & 0.92 $\pm$ 0.03 & 0.28 $\pm$ 0.05 \\
-Sidpa Bardo & 0.45 $\pm$ 0.07 & 0.78 $\pm$ 0.06 & 0.65 $\pm$ 0.08 \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-% Discussion
-\section{Discussion: Interdisciplinary Implications}
-
-\subsection{Central Hypothesis Validation}
-
-Our results demonstrate that (at conventional level):
-
-\begin{enumerate}
-    \item Qutrit model can effectively represent emptiness non-duality \textit{as logical structure}
-    \item Transitions between Bardo states follow coherent quantum dynamics \textit{as formal analogy}
-    \item Metaphorical "ERROR 505" corresponds mathematically to uncollapsed superposition states \textit{pointing toward potentiality}
-\end{enumerate}
-
-\begin{epistemic_warning}{Validation Scope}
-"Validation" is internal to mathematical model. We do not affirm Bardo Thodol "is" quantum algorithm, but that quantum formalism can be used as \emph{upāya} to explore its logical structure. Post-mortem contemplative experience remains outside model scope.
-\end{epistemic_warning}
-
-\subsection{Comparison with Classical Models}
-
-\begin{table}[h]
-\centering
-\caption{Comparison between classical and quantum models}
-\begin{tabular}{lcc}
-\toprule
-\textbf{Feature} & \textbf{Classical Model} & \textbf{Quantum Model} \\
-\midrule
-Emptiness representation & ERROR 505 & Pointer state $\ket{2}$ \\
-Superposed states & Not possible & Fundamental \\
-Probabilistic nature & Simulated & Intrinsic \\
-Non-local transitions & No & Yes (analogically) \\
-Temporal coherence & No & Yes \\
-\textbf{Documented paradoxes} & \textbf{Ignored} & \textbf{Explicit} \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\subsection{Implications for Consciousness Science}
-
-Our work suggests (as exploratory hypothesis, not ontological claim):
-
-\begin{itemize}
-    \item Consciousness states might follow quantum dynamics \textit{in certain structural aspects}
-    \item Deep meditation might affect quantum coherence parameters \textit{measurable neurophysiologically}
-    \item Computational consciousness models must consider quantum frameworks \textit{with explicit limit documentation}
-\end{itemize}
-
-\subsection{Recognized Project Limitations}
-
-\begin{enumerate}
-    \item \textbf{Phenomenological gap}: Model does not capture direct experience (\emph{pratyakṣa}) of bardo states
-    \item \textbf{Parametric reductionism}: Quantified karma contradicts its interdependent process nature
-    \item \textbf{Artificial temporality}: Mathematical time does not reflect \emph{samādhi} timelessness
-    \item \textbf{Observational dualism}: Maintains measurer-measured separation absent in \emph{rigpa}
-    \item \textbf{Emptiness reification}: $\ket{2}$ as vector contradicts \emph{niḥsvabhāva}
-\end{enumerate}
-
-These limitations are not "problems to solve" but inherent features of mathematical modeling of contemplative phenomena.
-
-% Conclusion
-\section{Conclusion and Future Work}
-
-\subsection{Main Conclusions}
-
-\begin{enumerate}
-    \item We demonstrated feasibility of \textit{structurally} modeling Bardo Thodol consciousness states using quantum systems
-    \item Qutrit approach overcomes binary model limitations \textit{at formal logic level}
-    \item Emptiness (sunyata) finds natural mathematical representation in quantum superpositions \textit{as analogy, not identity}
-    \item Karmic dynamics can be implemented as quantum operators \textit{with explicit reification recognition}
-    \item \textbf{Explicit irreducible paradox documentation} converts project into reflexive meta-model
-\end{enumerate}
-
-\subsection{Methodological Framework: Three Truths Applied}
-
-\begin{table}[h]
-\centering
-\caption{Two Truths method application to modeling}
-\begin{tabular}{p{3.5cm}p{5.5cm}p{5cm}}
-\toprule
-\textbf
+\end{document}
