@@ -123,6 +123,7 @@
 @MISC{hamann2025bardoquantum,
   title        = {Bardo Thödol Quantum Simulation Project},
   author       = {Hamann, Horacio Héctor},
+  orcid        = {https://orcid.org/0009-0006-4170-1470},
   year         = {2025},
   howpublished = {\url{https://github.com/arathorian/BardoThodol}},
   note         = {GitHub repository},
