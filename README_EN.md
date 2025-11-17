@@ -361,7 +361,8 @@ If you use this code or paper in your research, please cite:
   year={2025},
   journal={Preprint},
   url={https://github.com/arathorian/BardoThodol},
-  doi={10.5281/zenodo.XXXXXXX}
+  doi={10.5281/zenodo.17627820},
+  OCID={0009-0006-4170-1470}
 }
 ```
 
@@ -373,11 +374,10 @@ If you use this code or paper in your research, please cite:
   year={2025},
   version={1.0.0},
   url={https://github.com/arathorian/BardoThodol},
-  doi={10.5281/zenodo.XXXXXXX}
+  doi={10.5281/zenodo.17627820},
+  OCID={0009-0006-4170-1470}
 }
 ```
-
----
 
 ## 📦 Zenodo Deposit Contents
 
@@ -396,6 +396,11 @@ This repository contains:
 - **GitHub Repository**: [https://github.com/arathorian/BardoThodol](https://github.com/arathorian/BardoThodol)
 - **QuTiP Documentation**: [https://qutip.org/docs/latest/](https://qutip.org/docs/latest/)
 - **Madhyamaka Resources**: [Stanford Encyclopedia of Philosophy](https://plato.stanford.edu/entries/madhyamaka/)
+
+---
+
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17627820.svg)](https://doi.org/10.5281/zenodo.17627820)
 
 ---
 

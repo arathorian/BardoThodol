@@ -371,7 +371,8 @@ Si usas este código o paper en tu investigación, por favor cita:
   year={2025},
   journal={Preprint},
   url={https://github.com/arathorian/BardoTodol},
-  doi={10.5281/zenodo.XXXXXXX}
+  doi={10.5281/zenodo.17627820},
+  OCID={0009-0006-4170-1470}
 }
 ```
 
@@ -383,11 +384,33 @@ Si usas este código o paper en tu investigación, por favor cita:
   year={2025},
   version={1.0.0},
   url={https://github.com/arathorian/BardoTodol},
-  doi={10.5281/zenodo.XXXXXXX}
+  doi={10.5281/zenodo.17627820},
+  OCID={0009-0006-4170-1470}
 }
 ```
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
+## 📦 Zenodo Deposit Contents
+
+This repository contains:
+
+- **Source Code**: Complete Python implementation with epistemological reflexivity
+- **Academic Paper**: LaTeX manuscript with meta-modeling framework
+- **Documentation**: Comprehensive README with paradox documentation
+- **Simulation Data**: Example results and metrics
+- **Bibliography**: Interdisciplinary references (BibTeX format)
+
+---
+
+## 🔗 Related Resources
+
+- **GitHub Repository**: [https://github.com/arathorian/BardoThodol](https://github.com/arathorian/BardoThodol)
+- **QuTiP Documentation**: [https://qutip.org/docs/latest/](https://qutip.org/docs/latest/)
+- **Madhyamaka Resources**: [Stanford Encyclopedia of Philosophy](https://plato.stanford.edu/entries/madhyamaka/)
+
+---
+
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17627820.svg)](https://doi.org/10.5281/zenodo.17627820)
 
 ---
 
